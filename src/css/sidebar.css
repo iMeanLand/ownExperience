@@ -1,0 +1,73 @@
+.Sidebar {
+    display: flex;
+    flex-flow: column wrap;
+    width: 30%;
+    margin-top: 20px;
+}
+
+.FriendsActivity, .Friends {
+    width: 100%;
+    background: #FFF;
+    margin-bottom: 20px;
+}
+
+.FriendsActivityHeader, .FriendsHeader {
+    background-color: #f0eff5;
+    color: #76919c;
+    font-size: 13px;
+    padding: 10px;
+    border-top-left-radius: 4px;
+    font-weight: bold;
+    border-top-right-radius: 4px;
+}
+
+.FriendsActivityContent {
+    height: 285px;
+    overflow-y: scroll;
+    padding: 15px 15px;
+}
+
+.FriendsContent {
+    height: fit-content;
+    padding: 15px;
+}
+
+.FriendsContent .FriendBlock {
+    display: inline-block;
+    width: 118px;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.FriendsActivityBlock {
+    margin-bottom: 10px;
+}
+
+.FriendsActivityAvatar {
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    vertical-align: middle;
+    border-radius: 50%;
+    height: 40px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.FriendsAvatar {
+    display: inline-block;
+    margin-right: 2px;
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.FriendsActivityUserContent {
+    display: inline-block;
+    font-size: 12px;
+}

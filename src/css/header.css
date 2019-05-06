@@ -1,0 +1,42 @@
+header {
+    background: #FFF;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.05);
+}
+
+.logo img {
+    padding-top: 6px;
+    width: 60px;
+}
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 890px;
+    margin: 0 auto;
+    padding: 7px 15px;
+}
+
+.navigation-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-left: 75px;
+}
+
+.navigation-menu ul {
+    display: flex;
+}
+
+.navigation-menu li {
+    list-style: none;
+    margin-right: 25px;
+}
+
+.navigation-menu li a {
+    color: #323232;
+    text-decoration: none;
+}
+
+.navigation-menu li a:hover {
+    color: #61dafb;
+    text-decoration: underline;
+}

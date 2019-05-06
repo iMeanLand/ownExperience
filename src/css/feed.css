@@ -1,0 +1,133 @@
+.Feed {
+    display: flex;
+    width: 70%;
+}
+
+.FeedContent {
+    width: 100%;
+    padding: 20px;
+}
+
+.FeedPost {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.04);
+    background: #FFF;
+}
+
+.FeedPostHeader {
+    background-color: #f0eff5;
+    color: #76919c;
+    font-size: 13px;
+    padding: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.FeedPostContent {
+    padding: 10px;
+}
+
+.Advertisement {
+    width: 100%;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.04);
+    background: #FFF;
+    display: Flex;
+    flex-flow: column;
+    height: fit-content;
+}
+
+.AdvertisementHeader {
+    background-color: #f0eff5;
+    color: #76919c;
+    padding: 10px;
+    font-size: 13px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.AdvertisementContent {
+    padding: 10px;
+}
+
+.FeedAddPost {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.04);
+}
+
+.FeedAddPost .FeedAddPostHeader {
+    background-color: #f0eff5;
+    color: #76919c;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.FeedAddPost .FeedAddPostContent .FeedAddPostInput {
+    padding: 10px;
+    resize: none;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    height: 85px;
+    border-bottom: 1px solid #efefef;
+}
+
+.FeedPostActions {
+    width: 100%;
+    padding: 7px 12px;
+    border-top: 1px solid #efefef;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.FeedPostActions.UserAction {
+    padding: 12px 12px;
+    border-top: none;
+    padding-top: 7px;
+}
+
+.PostAction {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 15px;
+    color: #76919c;
+}
+
+.byUserAvatar {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.FeedAddPostButton {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    color: #FFF;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.FeedAddPostButton::before {
+    content: '';
+    background-color: #61dafb;
+    border-radius: 50%;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    z-index: -1;
+    margin-left: -8px;
+    margin-top: -5px;
+}

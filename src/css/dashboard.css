@@ -1,0 +1,18 @@
+.Board {
+    position: relative;
+    width: 95%;
+    height: calc(100vh - 115px);
+    padding: 15px;
+    white-space: nowrap;
+    margin: 0 auto;
+    overflow-x: scroll;
+}
+
+.column {
+    background: #f1f1f1;
+    border-radius: 6px;
+    padding: 15px;
+    display: inline-block;
+    width: 255px;
+    margin-right: 15px;
+}
