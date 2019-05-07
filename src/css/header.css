@@ -122,12 +122,17 @@ a.logo {
     background: #FFF;
     box-shadow: 0 5px 25px 0 rgba(0,0,0,.15);
     width: 180px;
-    height: 240px;
-    overflow-y: scroll;
+    z-index: 5;
 }
 
 .NotificationsListHeader {
     border-bottom: 1px solid #efefef;
     padding: 5px 0;
     font-size: 13px;
+}
+
+.NotificationsListContent {
+    margin-top: 10px;
+    height: 240px;
+    overflow-y: scroll;
 }
