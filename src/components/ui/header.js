@@ -2,8 +2,7 @@ import React from 'react';
 import '../../css/header.css'
 import logo from '../../logo.png';
 import {Link, NavLink} from 'react-router-dom';
-
-const vasek = 'jora';
+import globals from '../../globals';
 
 class Header extends React.Component {
     constructor(props) {
@@ -12,9 +11,7 @@ class Header extends React.Component {
         this.displayFriendsNotificationsList = this.displayFriendsNotificationsList.bind(this);
     }
 
-
     displayFriendsNotificationsList() {
-        console.log('123');
         let element = document.getElementsByClassName('friendsNotificationsList')[0];
         if (element.classList.contains('hidden')) {
             element.classList.remove('hidden');
@@ -25,8 +22,7 @@ class Header extends React.Component {
         }
     }
 
-
-    render() {
+    HeaderDOM() {
         return (
             <header>
                 <nav>
@@ -89,6 +85,14 @@ class Header extends React.Component {
                 </nav>
             </header>
         )
+    }
+
+    render() {
+
+        if (!globals.loggedIn) return null;
+
+        return this.HeaderDOM();
+
     }
 
 

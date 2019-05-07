@@ -16,13 +16,17 @@ import Gallery from './components/profile/profilecontent/gallery';
 import Friends from './components/profile/profilecontent/friends';
 import ProfileGroups from './components/profile/profilecontent/groups';
 import './css/main.css';
+import globals from './globals';
+
+let component = Feed;
+
+if (!globals.loggedIn) component = Welcome;
 
 const routing = (
     <Router>
         <Header />
         <Switch>
-            <Route exact path="/welcome" comnponent={Welcome}/>
-            <Route exact path="/" component={Feed}/>
+            <Route exact path="/" component={component}/>
             <Route exact path="/kanban" component={Kanban}/>
             <Route exact path="/groups" component={Groups}/>
             <Route exact path="/pages" component={Pages}/>
