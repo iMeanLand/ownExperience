@@ -90,6 +90,7 @@
     padding: 12px 12px;
     border-top: none;
     padding-top: 7px;
+    background: #FFF;
 }
 
 .PostAction {
@@ -117,6 +118,7 @@
     font-size: 18px;
     color: #FFF;
     cursor: pointer;
+    z-index: 2;
     margin-right: 10px;
 }
 

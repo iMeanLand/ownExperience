@@ -6,9 +6,7 @@ import Sidebar from '../sidebar/feed/sidebar';
 function Groups() {
     return (
         <div className="Container">
-            <div className="Groups">
-                <GroupsContent />
-            </div>
+            <GroupsContent />
             <Sidebar/>
         </div>
     )

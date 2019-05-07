@@ -68,6 +68,35 @@ h1, h2, h3, h4, h5, p {
     box-sizing: border-box;
 }
 
+.Row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.mgBottom {
+    margin-bottom: 30px;
+}
+
+.ThreeColumn {
+    width: 30%;
+}
+
+.TwoColumn {
+    width: 50%;
+}
+
+.FourColumn {
+    width: 25%;
+}
+
+.OneColumn {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

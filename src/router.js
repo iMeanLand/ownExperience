@@ -9,6 +9,7 @@ import Pages from './components/pages/pages';
 import Kanban from "./components/modules/dashboard/Kanban";
 import Profile from "./components/profile/profile";
 import Notfound from "./components/404/notfound";
+import Welcome from "./components/welcome/welcome";
 
 import About from './components/profile/profilecontent/about';
 import Gallery from './components/profile/profilecontent/gallery';
@@ -20,6 +21,7 @@ const routing = (
     <Router>
         <Header />
         <Switch>
+            <Route exact path="/welcome" comnponent={Welcome}/>
             <Route exact path="/" component={Feed}/>
             <Route exact path="/kanban" component={Kanban}/>
             <Route exact path="/groups" component={Groups}/>

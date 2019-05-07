@@ -11,7 +11,7 @@
 .ProfileCover {
     margin: 20px;
     margin-right: 0;
-    height: 400px;
+    height: 500px;
     width: 100%;
     position: relative;
     background-size: cover;
@@ -39,7 +39,7 @@
 .ProfileName {
     color: #FFF;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 32px;
     position: absolute;
     width: 300px;
     right: -320px;
@@ -73,7 +73,7 @@
     border-bottom: 2px solid transparent;
     list-style: none;
     margin-right: 12px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     padding-top: 0;
     margin-bottom: 0;
@@ -88,4 +88,78 @@
 
 .ProfileMenu ul li a.active {
     border-bottom: 2px solid #61dafb;
+}
+
+.InfoHeading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.InfoSubHeading {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.ProfileGroupAvatar {
+    display: inline-block;
+    margin-right: 10px;
+    width: 35px;
+    border-radius: 50%;
+    height: 35px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFF;
+    border: 2px solid #5dca65;
+}
+
+.ProfileGroupBlock {
+    margin-bottom: 15px;
+}
+
+.ProfileGroupContent {
+    display: inline-block;
+    width: 85%;
+    position: relative;
+    padding-right: 20px;
+    vertical-align: top;
+}
+
+.ProfileGroupName {
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.ProfileGroupDescription {
+    width: 100%;
+    display: block;
+    font-size: 12px;
+}
+
+.ProfileGroupStatus {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+}
+
+.ProfileGroupStatus.Private {
+    color: red;
+}
+
+.ProfileGroupStatus.Public {
+    color: #5dca65;
+}
+
+.ThreeColumn .FriendsUserContent {
+    font-size: 14px;
 }
