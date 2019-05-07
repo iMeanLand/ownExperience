@@ -3,9 +3,12 @@ header {
     box-shadow: 0 4px 12px 0 rgba(0,0,0,0.05);
 }
 
-.logo img {
-    padding-top: 6px;
+.logo {
+    padding-top: 4px;
     width: 60px;
+    height: 50px;
+    background-size: 60px;
+    background-position: center;
 }
 
 nav {
@@ -13,7 +16,8 @@ nav {
     flex-flow: row nowrap;
     width: 890px;
     margin: 0 auto;
-    padding: 7px 15px;
+    height: 56px;
+    padding: 0 15px;
 }
 
 .navigation-menu {
@@ -24,11 +28,12 @@ nav {
 
 .navigation-menu ul {
     display: flex;
+    padding-top: 2px;
 }
 
 .navigation-menu li {
     list-style: none;
-    margin-right: 25px;
+    margin-right: 20px;
 }
 
 .navigation-menu li a {
@@ -39,4 +44,45 @@ nav {
 .navigation-menu li a:hover {
     color: #61dafb;
     text-decoration: underline;
+}
+
+.navigationLink i {
+    font-size: 20px;
+    color: #5f737f;
+}
+
+.navigationLink i:hover {
+    color: #42b4f5;
+}
+
+a.logo {
+    display: block;
+    padding-top: 0;
+    height: 56px;
+    width: 60px;
+}
+
+.profileBlock {
+    width: 45px;
+    height: 0;
+    display: block;
+}
+
+.profileImage {
+    display: inline-block;
+    border-radius: 50%;
+    background-size: 34px;
+    height: 34px;
+    width: 34px;
+    margin-top: -7px;
+    background-repeat: no-repeat;
+}
+
+.profileBlock i {
+    margin-left: 40px;
+    margin-top: 8px;
+}
+
+.profileImage:hover i {
+    color: #61dafb;
 }

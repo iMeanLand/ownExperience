@@ -27,6 +27,23 @@ h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
+.SomePageHeader {
+    background-color: #f0eff5;
+    color: #76919c;
+    font-size: 13px;
+    padding: 10px;
+    border-top-left-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+    border-top-right-radius: 4px;
+    box-sizing: border-box;
+}
+
+.SomePageContent {
+    padding: 15px;
+    background: #FFF;
+    box-sizing: border-box;
+}
 
 /* width */
 ::-webkit-scrollbar {

@@ -1,0 +1,9 @@
+.Pages, .Groups {
+    display: flex;
+    width: 70%;
+}
+
+.PagesContent, .GroupsContent {
+    padding: 20px;
+    width: 100%;
+}
