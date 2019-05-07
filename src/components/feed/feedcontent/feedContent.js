@@ -1,30 +1,18 @@
 import React from 'react';
-import postData from './posts/postData';
-import TextPost from './posts/TextPost';
-import AddPost from '../../actions/posts/addpost';
+import Timeline from './timeline';
 
-
-const MyComponents = {
-    TextPost: TextPost
-};
 
 class feedContent extends React.Component {
 
     render() {
 
-        const Post = postData.map((value) => {
-            let MyComponent = MyComponents[value.type];
-            return React.createElement(MyComponent, {
-                content: value.content,
-                by: value.by,
-                avatar: value.image
-            });
-        });
+        const styles = {
+            width: '100%'
+        };
 
         return (
             <div className="FeedContent">
-                <AddPost/>
-                {Post}
+                <Timeline styles={styles}/>
             </div>
         )
     }

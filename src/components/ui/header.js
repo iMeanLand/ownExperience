@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../css/header.css'
 import logo from '../../logo.png';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 const vasek = 'jora';
 
@@ -15,15 +15,13 @@ class Header extends React.Component {
 
     displayFriendsNotificationsList() {
         console.log('123');
-        let element = document.getElementsByClassName('friendsNotificationsList');
+        let element = document.getElementsByClassName('friendsNotificationsList')[0];
         if (element.classList.contains('hidden')) {
-            element.style.display('block');
             element.classList.remove('hidden');
-            document.getElementsByClassName('friendsBtn').classList.add('active');
+            document.getElementsByClassName('friendsBtn')[0].classList.add('active');
         } else {
-            element.style.display('hidden');
             element.classList.add('hidden');
-            document.getElementsByClassName('friendsBtn').classList.remove('active');
+            document.getElementsByClassName('friendsBtn')[0].classList.remove('active');
         }
     }
 
@@ -41,6 +39,9 @@ class Header extends React.Component {
                             <li className="navigationLink">
                                 <a href="#friends" className="friendsBtn" onClick={this.displayFriendsNotificationsList}>
                                     <div className="friendsNotificationsList hidden">
+                                        <div className="NotificationsListHeader">
+                                            Friends Notifications List
+                                        </div>
                                     </div>
                                     <i className="fas fa-user-friends">
                                     </i>
@@ -59,16 +60,16 @@ class Header extends React.Component {
                                 </a>
                             </li>
                             <li className="navigationLink">
-                                <Link to="/groups">
+                                <NavLink activeClassName="active" to="/groups">
                                     <i className="fas fa-users">
                                     </i>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="navigationLink">
-                                <Link to="/pages">
+                                <NavLink activeClassName="active" to="/pages">
                                     <i className="fas fa-tachometer-alt">
                                     </i>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="navigationLink">
                                 <Link className="profileBlock" to="/profile">

@@ -27,13 +27,26 @@ h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
+.PageContainerContent {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+}
+
+.PageContainer {
+    display: flex;
+    width: 70%;
+}
+
 .SomePageContainer {
     display: flex;
+    flex-flow: column wrap;
     width: 70%;
     padding: 20px;
 }
 
-.SomePageHeader {
+.SomePageHeader, .PageHeader {
     background-color: #f0eff5;
     color: #76919c;
     font-size: 13px;
@@ -43,11 +56,15 @@ h1, h2, h3, h4, h5, p {
     width: 100%;
     border-top-right-radius: 4px;
     box-sizing: border-box;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.05);
 }
 
-.SomePageContent {
+.SomePageContent, .PageContent {
     padding: 15px;
     background: #FFF;
+    margin-bottom: 10px;
+    width: 100%;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.05);
     box-sizing: border-box;
 }
 

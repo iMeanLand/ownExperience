@@ -36,6 +36,10 @@ nav {
     margin-right: 20px;
 }
 
+.navigationLink .active i {
+    color: #61dafb;
+}
+
 .navigation-menu li a {
     color: #323232;
     text-decoration: none;
@@ -96,11 +100,21 @@ a.logo {
 }
 
 .friendsNotificationsList.active {
+    color: #61dafb;
+}
 
+.friendsNotificationsList.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.friendsBtn {
+    position: relative;
 }
 
 .friendsNotificationsList {
-    display: none;
+    display: block;
     position: absolute;
     top: 30px;
     left: -70px;
@@ -110,4 +124,10 @@ a.logo {
     width: 180px;
     height: 240px;
     overflow-y: scroll;
+}
+
+.NotificationsListHeader {
+    border-bottom: 1px solid #efefef;
+    padding: 5px 0;
+    font-size: 13px;
 }

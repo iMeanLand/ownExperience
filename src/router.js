@@ -9,6 +9,11 @@ import Pages from './components/pages/pages';
 import Kanban from "./components/modules/dashboard/Kanban";
 import Profile from "./components/profile/profile";
 import Notfound from "./components/404/notfound";
+
+import About from './components/profile/profilecontent/about';
+import Gallery from './components/profile/profilecontent/gallery';
+import Friends from './components/profile/profilecontent/friends';
+import ProfileGroups from './components/profile/profilecontent/groups';
 import './css/main.css';
 
 const routing = (
@@ -16,10 +21,15 @@ const routing = (
         <Header />
         <Switch>
             <Route exact path="/" component={Feed}/>
-            <Route exact path="/profile" component={Profile}/>
             <Route exact path="/kanban" component={Kanban}/>
             <Route exact path="/groups" component={Groups}/>
             <Route exact path="/pages" component={Pages}/>
+            {/*Profile Pages*/}
+            <Route exact path="/profile" component={Profile}/>
+            <Route exact path="/profile/about" component={About}/>
+            <Route exact path="/profile/gallery" component={Gallery}/>
+            <Route exact path="/profile/friends" component={Friends}/>
+            <Route exact path="/profile/groups" component={ProfileGroups}/>
             <Route component={Notfound}/>
         </Switch>
         <Footer />
