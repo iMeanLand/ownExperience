@@ -1,0 +1,45 @@
+.Profile {
+    width: 100%;
+    display: flex;
+}
+
+.ProfileContent {
+    width: 70%;
+    display: flex;
+}
+
+.ProfileCover {
+    margin: 20px;
+    margin-right: 0;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ProfileAvatar {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-size: contain;
+    background-position: center;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    width: 185px;
+    height: 185px;
+    border: 10px solid #efefef;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.ProfileName {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 36px;
+    position: absolute;
+    width: 300px;
+    right: -320px;
+    top: 70px;
+}

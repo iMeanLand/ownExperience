@@ -27,6 +27,12 @@ h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
+.SomePageContainer {
+    display: flex;
+    width: 70%;
+    padding: 20px;
+}
+
 .SomePageHeader {
     background-color: #f0eff5;
     color: #76919c;
