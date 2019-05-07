@@ -9,7 +9,8 @@ import Pages from './components/pages/pages';
 import Kanban from "./components/modules/dashboard/Kanban";
 import Profile from "./components/profile/profile";
 import Notfound from "./components/404/notfound";
-import Welcome from "./components/welcome/welcome";
+import Register from "./components/guest/register";
+import Login from "./components/guest/login";
 
 import About from './components/profile/profilecontent/about';
 import Gallery from './components/profile/profilecontent/gallery';
@@ -20,13 +21,15 @@ import globals from './globals';
 
 let component = Feed;
 
-if (!globals.loggedIn) component = Welcome;
+if (!globals.loggedIn) component = Register;
 
 const routing = (
     <Router>
         <Header />
         <Switch>
             <Route exact path="/" component={component}/>
+            <Route exact path="/register" component={Register}/>
+            <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>
             <Route exact path="/groups" component={Groups}/>
             <Route exact path="/pages" component={Pages}/>
