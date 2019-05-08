@@ -179,3 +179,13 @@ a.logo {
 .DropDownMenuBtn:hover {
     background: #efefef;
 }
+
+.profileMenuDropdown li a {
+    text-decoration: none;
+    color: #76919c;
+}
+
+.profileMenuDropdown li:hover a {
+    color: #76919c;
+    text-decoration: none;
+}

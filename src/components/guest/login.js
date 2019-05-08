@@ -9,12 +9,10 @@ class Login extends React.Component {
 
     constructor(props) {
         super(props);
-
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        $('.TypeInput').val('');
 
         let username = $('#UsernameInput').val();
         let password = $('#PasswordInput').val();
@@ -25,12 +23,9 @@ class Login extends React.Component {
             'avatar': null
         };
 
-        cookies.setCookie('user', user, 30);
-
-
+        cookies.setCookie('user', JSON.stringify(user), 30);
 
         this.props.history.go('/');
-
     };
 
     render() {

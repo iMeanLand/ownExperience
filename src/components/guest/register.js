@@ -9,12 +9,10 @@ class Register extends React.Component {
 
     constructor(props) {
         super(props);
-
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        $('.TypeInput').val('');
 
         let username = $('#UsernameInput').val();
         let password = $('#PasswordInput').val();
@@ -25,15 +23,8 @@ class Register extends React.Component {
             'avatar': null
         };
 
-        cookies.setCookie('user', user, 30);
+        cookies.setCookie('user', JSON.stringify(user), 30);
 
-        // fetch('/register')
-        //     .then(function(response) {
-        //         return response.json();
-        //     })
-        //     .then(function(myJson) {
-        //         console.log(JSON.stringify(myJson));
-        //     });
         this.props.history.go('/');
 
     }
@@ -44,6 +35,8 @@ class Register extends React.Component {
                 <div className="WelcomePageContent">
                     <h1>Register Page</h1>
                     <form id="RegisterForm" onSubmit={(e) => this.handleSubmit(e)}>
+                    {/*<form id="RegisterForm" onSubmit={(e) => this.setFormValues(e)}>*/}
+                        {/*<input type="text" placeholder="Username" id="UsernameInput" onChange={(e) => this.setName(e)} className="TypeInput" required />*/}
                         <input type="text" placeholder="Username" id="UsernameInput" className="TypeInput" required />
                         <input type="password" placeholder="Password" id="PasswordInput" className="TypeInput" required />
                         <input type="submit" />

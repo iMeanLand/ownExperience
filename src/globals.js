@@ -1,6 +1,6 @@
 import cookies from './cookies';
-
-const userData = cookies.getCookie('user');
+const userData = JSON.parse(cookies.getCookie('user'));
+console.log(userData);
 
 const globals = {
         // If user is logged in or not

@@ -52,13 +52,14 @@ class Header extends React.Component {
             <header>
                 <nav>
                     <Link className="logo" to="/">
-                        <div className="logo" style={{backgroundImage: 'url('+ logo +')'}}>
+                        <div className="logo" style={{backgroundImage: 'url(' + logo + ')'}}>
                         </div>
                     </Link>
                     <div className="navigation-menu">
                         <ul>
                             <li className="navigationLink">
-                                <a href="#friends" className="friendsBtn" onClick={this.displayFriendsNotificationsList}>
+                                <a href="#friends" className="friendsBtn"
+                                   onClick={this.displayFriendsNotificationsList}>
                                     <div className="friendsNotificationsList hidden">
                                         <div className="NotificationsListHeader">
                                             Friends Notifications List
@@ -99,7 +100,7 @@ class Header extends React.Component {
                                 <span className="profileBlock">
                                     <div className="profileImage"
                                          onClick={this.handleProfileDropdown}
-                                         style={{backgroundImage: 'url('+ process.env.PUBLIC_URL + '/uploads/thumb.png' +')'}}>
+                                         style={{backgroundImage: 'url(' + process.env.PUBLIC_URL + '/uploads/thumb.png' + ')'}}>
                                         <i className="fas fa-angle-down"></i>
                                     </div>
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
@@ -107,15 +108,17 @@ class Header extends React.Component {
                                             <NavLink className="DropDownMenuBtn" activeClassName="active" to="/profile">
                                                 {globals.user.username}
                                             </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink activeClassName='active' className="DropDownMenuBtn" to="/kanban">Kanban</NavLink>
+                                        </li>
+                                        <li>
                                             <span className="DropDownMenuBtn LogoutBtn" onClick={this.handleLogout}>
                                                 Logout
                                             </span>
                                         </li>
                                     </ul>
                                 </span>
-                            </li>
-                            <li className="navigationLink">
-                                <Link to="/kanban">Kanban</Link>
                             </li>
                         </ul>
                     </div>

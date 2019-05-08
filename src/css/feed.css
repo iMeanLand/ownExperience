@@ -133,3 +133,7 @@
     margin-left: -8px;
     margin-top: -5px;
 }
+
+.FeedAddPostButton:hover .FeedAddPostButton::before {
+    background-color: #50acca;
+}
