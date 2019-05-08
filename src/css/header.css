@@ -26,7 +26,7 @@ nav {
     padding-left: 75px;
 }
 
-.navigation-menu ul {
+.navigation-menu > ul {
     display: flex;
     padding-top: 2px;
 }
@@ -70,6 +70,7 @@ a.logo {
     width: 45px;
     height: 0;
     display: block;
+    position: relative;
 }
 
 .profileImage {
@@ -116,13 +117,15 @@ a.logo {
 .friendsNotificationsList {
     display: block;
     position: absolute;
-    top: 30px;
+    top: 38px;
     left: -70px;
     padding: 15px;
     background: #FFF;
     box-shadow: 0 5px 25px 0 rgba(0,0,0,.15);
     width: 180px;
     z-index: 5;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
 }
 
 .NotificationsListHeader {
@@ -136,4 +139,43 @@ a.logo {
     height: 240px;
     overflow-y: scroll;
     font-size: 14px;
+}
+
+.profileMenuDropdown.hidden {
+    display: none;
+}
+
+.profileMenuDropdown {
+    display: block;
+    position: absolute;
+    top: 38px;
+    left: -55px;
+    background: #FFF;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.15);
+    width: 120px;
+    z-index: 5;
+    padding: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 0;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+.profileMenuDropdown li {
+    margin-right: 0;
+    color: #76919c;
+}
+
+.DropDownMenuBtn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.DropDownMenuBtn:hover {
+    background: #efefef;
 }

@@ -1,14 +1,17 @@
 import React from 'react';
 import '../../css/header.css'
 import logo from '../../logo.png';
-import {Link, NavLink} from 'react-router-dom';
+import {Link, NavLink, Redirect} from 'react-router-dom';
 import globals from '../../globals';
+import cookies from "../../cookies";
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
 
         this.displayFriendsNotificationsList = this.displayFriendsNotificationsList.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
+        this.props = props;
     }
 
     displayFriendsNotificationsList() {
@@ -20,6 +23,28 @@ class Header extends React.Component {
             element.classList.add('hidden');
             document.getElementsByClassName('friendsBtn')[0].classList.remove('active');
         }
+    }
+
+    handleLogout() {
+        cookies.removeCookie('user');
+        window.location.href = '/';
+    }
+
+    handleProfileDropdown() {
+        let element = document.getElementsByClassName('profileMenuDropdown')[0];
+        if (element.classList.contains('hidden')) {
+            element.classList.remove('hidden');
+            document.getElementsByClassName('profileImage')[0].classList.add('active');
+        } else {
+            element.classList.add('hidden');
+            document.getElementsByClassName('profileImage')[0].classList.remove('active');
+        }
+    }
+
+    handleCloseDropdown() {
+        let element = document.getElementsByClassName('profileMenuDropdown')[0];
+        element.classList.add('hidden');
+        document.getElementsByClassName('profileImage')[0].classList.remove('active');
     }
 
     HeaderDOM() {
@@ -71,12 +96,23 @@ class Header extends React.Component {
                                 </NavLink>
                             </li>
                             <li className="navigationLink">
-                                <Link className="profileBlock" to="/profile">
-                                    <div className="profileImage" style={{backgroundImage: 'url('+ process.env.PUBLIC_URL + '/uploads/thumb.png' +')'}}>
+                                <span className="profileBlock">
+                                    <div className="profileImage"
+                                         onClick={this.handleProfileDropdown}
+                                         style={{backgroundImage: 'url('+ process.env.PUBLIC_URL + '/uploads/thumb.png' +')'}}>
                                         <i className="fas fa-angle-down"></i>
                                     </div>
-
-                                </Link>
+                                    <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
+                                        <li>
+                                            <NavLink className="DropDownMenuBtn" activeClassName="active" to="/profile">
+                                                {globals.user.username}
+                                            </NavLink>
+                                            <span className="DropDownMenuBtn LogoutBtn" onClick={this.handleLogout}>
+                                                Logout
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </span>
                             </li>
                             <li className="navigationLink">
                                 <Link to="/kanban">Kanban</Link>
@@ -90,10 +126,9 @@ class Header extends React.Component {
 
     render() {
 
-        if (!globals.loggedIn) return null;
+        if (!globals.user) return null;
 
         return this.HeaderDOM();
-
     }
 
 

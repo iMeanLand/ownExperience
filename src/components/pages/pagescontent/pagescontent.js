@@ -4,7 +4,6 @@ function PagesContent() {
 
     const Pages = {};
 
-
     return (
         <div className="PagesContent">
             <div className="SomePageHeader">

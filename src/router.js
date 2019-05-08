@@ -23,7 +23,7 @@ const routing = (
     <Router>
         <Header />
         <Switch>
-            <Route exact path="/" component={(!globals.loggedIn) ? Register : Feed}/>
+            <Route exact path="/" component={(!globals.user) ? Register : Feed}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>
