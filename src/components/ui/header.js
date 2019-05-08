@@ -39,6 +39,7 @@ class Header extends React.Component {
                                             Friends Notifications List
                                         </div>
                                         <div className="NotificationsListContent">
+                                            No notifications found
                                         </div>
                                     </div>
                                     <i className="fas fa-user-friends">

@@ -19,15 +19,11 @@ import ProfileGroups from './components/profile/profilecontent/groups';
 import './css/main.css';
 import globals from './globals';
 
-let component = Feed;
-
-if (!globals.loggedIn) component = Register;
-
 const routing = (
     <Router>
         <Header />
         <Switch>
-            <Route exact path="/" component={component}/>
+            <Route exact path="/" component={(!globals.loggedIn) ? Register : Feed}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>

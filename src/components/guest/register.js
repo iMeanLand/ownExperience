@@ -2,6 +2,7 @@ import React from 'react';
 import '../../css/main.css';
 import '../../css/welcome.css';
 import $ from 'jquery';
+import cookies from '../../cookies';
 
 class Register extends React.Component {
 
@@ -14,12 +15,14 @@ class Register extends React.Component {
         e.preventDefault();
         $('.TypeInput').val('');
 
+        cookies.setCookie('user', user, 30);
+
         let username = $('#UsernameInput').val();
         let password = $('#PasswordInput').val();
 
-        const data = {
-            username: username,
-            password: password
+        const user = {
+            'username': username,
+            'password': password
         };
 
         fetch('/register')

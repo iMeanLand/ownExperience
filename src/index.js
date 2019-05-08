@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import routing from './router';
 import * as serviceWorker from './serviceWorker';
+import cookies from './cookies';
 
 ReactDOM.render(routing, document.getElementById('root'));
 
