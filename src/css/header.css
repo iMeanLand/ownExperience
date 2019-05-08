@@ -29,6 +29,7 @@ nav {
 .navigation-menu > ul {
     display: flex;
     padding-top: 2px;
+    padding-left: 150px;
 }
 
 .navigation-menu li {

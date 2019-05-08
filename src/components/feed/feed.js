@@ -1,5 +1,5 @@
 import React from 'react';
-import FeedContent from './feedcontent/feedContent';
+import FeedContent from './feedcontent/feedcontent';
 import '../../css/feed.css';
 import Sidebar from '../sidebar/feed/sidebar';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from "react-router-dom";
-import globals from '../../../globals';
+import userData from "../../userdata";
 
 function ProfileHeader() {
 
@@ -9,7 +9,7 @@ function ProfileHeader() {
              style={{backgroundImage: 'url(' + process.env.PUBLIC_URL + '/uploads/cover.jpg)'}}>
             <div className="ProfileAvatar"
                  style={{backgroundImage: 'url(' + process.env.PUBLIC_URL + '/uploads/thumb.png)'}}>
-                <div className="ProfileName">{globals.user.username}</div>
+                <div className="ProfileName">{userData.username}</div>
             </div>
             <div className="ProfileMenu">
                 <ul>

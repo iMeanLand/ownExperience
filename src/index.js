@@ -1,8 +1,13 @@
 import React from 'react';
+import redux from 'react-redux';
 import ReactDOM from 'react-dom';
 import routing from './router';
 import * as serviceWorker from './serviceWorker';
 import cookies from './cookies';
+import {createStore} from "redux";
+import {globalReducer} from './redux/store/globalreducer';
+
+const store = createStore(globalReducer);
 
 ReactDOM.render(routing, document.getElementById('root'));
 

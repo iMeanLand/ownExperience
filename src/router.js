@@ -11,24 +11,26 @@ import Profile from "./components/profile/profile";
 import Notfound from "./components/404/notfound";
 import Register from "./components/guest/register";
 import Login from "./components/guest/login";
+import userData from './components/userdata';
 
 import About from './components/profile/profilecontent/about';
 import Gallery from './components/profile/profilecontent/gallery';
 import Friends from './components/profile/profilecontent/friends';
 import ProfileGroups from './components/profile/profilecontent/groups';
 import './css/main.css';
-import globals from './globals';
+import Settings from "./components/settings/settings";
 
 const routing = (
     <Router>
         <Header />
         <Switch>
-            <Route exact path="/" component={(!globals.user) ? Register : Feed}/>
+            <Route exact path="/" component={ (!userData) ? Register : Feed }/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>
             <Route exact path="/groups" component={Groups}/>
             <Route exact path="/pages" component={Pages}/>
+            <Route exact path="/settings" component={Settings}/>
             {/*Profile Pages*/}
             <Route exact path="/profile" component={Profile}/>
             <Route exact path="/profile/about" component={About}/>

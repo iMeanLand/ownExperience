@@ -1,33 +1,9 @@
-import React from 'react';
+import cookies from "../cookies";
 
-class UserData {
+let userData = false;
 
-    constructor() {
-
-        this.state = {
-            avatar: process.env.PUBLIC_URL + '/uploads/thumb.png',
-            name: 'Alin Tabuci'
-        }
-    }
-
-    getAvatar() {
-        // Getting the current avatar;
-        return this.state.avatar;
-    }
-
-    getName() {
-        return this.state.name;
-    }
-
-
-    setNewImage() {
-        // TODO: upload new image
-
-        // TODO: change the state of the new image!
-
-        this.setState({});
-    }
-
+if (cookies.getCookie(('user'))) {
+    userData = JSON.parse(cookies.getCookie('user'));
 }
 
-export default UserData;
+export default userData;

@@ -2,8 +2,9 @@ import React from 'react';
 import '../../css/header.css'
 import logo from '../../logo.png';
 import {Link, NavLink, Redirect} from 'react-router-dom';
-import globals from '../../globals';
 import cookies from "../../cookies";
+import userData from "../userdata";
+
 
 class Header extends React.Component {
     constructor(props) {
@@ -106,15 +107,18 @@ class Header extends React.Component {
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
                                         <li>
                                             <NavLink className="DropDownMenuBtn" activeClassName="active" to="/profile">
-                                                {globals.user.username}
+                                                {userData.username}
                                             </NavLink>
                                         </li>
                                         <li>
                                             <NavLink activeClassName='active' className="DropDownMenuBtn" to="/kanban">Kanban</NavLink>
                                         </li>
                                         <li>
+                                            <NavLink activeClassName='active' className="DropDownMenuBtn" to="/settings">Settings</NavLink>
+                                        </li>
+                                        <li>
                                             <span className="DropDownMenuBtn LogoutBtn" onClick={this.handleLogout}>
-                                                Logout
+                                                Log out
                                             </span>
                                         </li>
                                     </ul>
@@ -128,9 +132,7 @@ class Header extends React.Component {
     }
 
     render() {
-
-        if (!globals.user) return null;
-
+        if (!userData) return null;
         return this.HeaderDOM();
     }
 
