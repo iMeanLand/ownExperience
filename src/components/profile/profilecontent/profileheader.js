@@ -24,7 +24,6 @@ class ProfileHeader extends React.Component {
     }
 
     handleUploadAvatar(e) {
-        console.log('CLICLKED');
         this.props.changeAvatar();
     }
 
@@ -38,8 +37,8 @@ class ProfileHeader extends React.Component {
                     <div className="ProfileUploadAvatar" onClick={this.handleUploadAvatar}>
                         <i className="fas fa-upload"></i>
                     </div>
-                    <div className="ProfileName">{userData.username}</div>
                 </div>
+                <div className="ProfileName">{userData.username}</div>
                 <div className="ProfileMenu">
                     <ul>
                         <li>

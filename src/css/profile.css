@@ -32,6 +32,7 @@
     height: 185px;
     border: 10px solid #efefef;
     border-radius: 100%;
+    overflow: hidden;
     cursor: pointer;
     z-index: 2;
 }
@@ -42,8 +43,8 @@
     font-size: 32px;
     position: absolute;
     width: 300px;
-    right: -320px;
-    top: 70px;
+    left: 245px;
+    bottom: 110px;
 }
 
 .ProfileMenu {
@@ -171,14 +172,20 @@
 .ProfileUploadAvatar {
     display: none;
     position: absolute;
-    left: 45%;
-    top: 80px;
-    z-index: 5;
+    z-index: 1;
     font-size: 20px;
-    color: #5f737f;
+    color: #758e9d;
+    width: 100%;
+    left: 0;
+    padding-top: 25px;
+    right: 0;
+    text-align: center;
+    bottom: 0;
+    height: 67px;
+    background: rgba(0,0,0,0.75);
 }
 
 .ProfileUploadAvatar:hover {
     cursor: pointer;
-    color: #758e9d;
+    color: #FFF;
 }

@@ -1,10 +1,28 @@
 import React from 'react';
+import {changeAvatar, getUserData} from '../../../redux/store/user/actions';
+import {connect} from 'react-redux';
 
-function addpost() {
+function mappingData(state) {
+    return {
+        avatar: state.userReducer.avatar,
+    };
+}
+
+const mapDispatchToComponent = {
+    changeAvatar,
+    getUserData
+};
+
+
+function addpost(props) {
     return (
         <div className="FeedAddPost">
             <div className="FeedAddPostHeader">
-                Add post title
+                <div className="byUser">
+                    <div className="byUserAvatar" style={{backgroundImage: 'url("' + props.avatar + '")'}}>
+                    </div>
+                    Add post title
+                </div>
             </div>
             <div className="FeedAddPostContent">
                 <textarea className="FeedAddPostInput" placeholder="Post something in your time line">
@@ -17,4 +35,4 @@ function addpost() {
     )
 }
 
-export default addpost;
+export default connect(mappingData, mapDispatchToComponent)(addpost);
