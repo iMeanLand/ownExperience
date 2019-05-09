@@ -4,6 +4,20 @@ import logo from '../../logo.png';
 import {Link, NavLink, Redirect} from 'react-router-dom';
 import cookies from "../../cookies";
 import userData from "../userdata";
+import {changeAvatar, getUserData} from '../../redux/store/user/actions';
+import {connect} from 'react-redux';
+
+function mappingData(state) {
+    console.log(state);
+    return {
+        avatar: state.userReducer.avatar,
+    };
+}
+
+const mapDispatchToComponent = {
+    changeAvatar,
+    getUserData
+};
 
 
 class Header extends React.Component {
@@ -101,7 +115,7 @@ class Header extends React.Component {
                                 <span className="profileBlock">
                                     <div className="profileImage"
                                          onClick={this.handleProfileDropdown}
-                                         style={{backgroundImage: 'url(' + process.env.PUBLIC_URL + '/uploads/thumb.png' + ')'}}>
+                                         style={{backgroundImage: 'url(' + this.props.avatar + ')'}}>
                                         <i className="fas fa-angle-down"></i>
                                     </div>
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
@@ -111,10 +125,12 @@ class Header extends React.Component {
                                             </NavLink>
                                         </li>
                                         <li>
-                                            <NavLink activeClassName='active' className="DropDownMenuBtn" to="/kanban">Kanban</NavLink>
+                                            <NavLink activeClassName='active' className="DropDownMenuBtn"
+                                                     to="/kanban">Kanban</NavLink>
                                         </li>
                                         <li>
-                                            <NavLink activeClassName='active' className="DropDownMenuBtn" to="/settings">Settings</NavLink>
+                                            <NavLink activeClassName='active' className="DropDownMenuBtn"
+                                                     to="/settings">Settings</NavLink>
                                         </li>
                                         <li>
                                             <span className="DropDownMenuBtn LogoutBtn" onClick={this.handleLogout}>
@@ -139,4 +155,5 @@ class Header extends React.Component {
 
 }
 
-export default Header;
+export default connect(mappingData, mapDispatchToComponent)(Header);
+

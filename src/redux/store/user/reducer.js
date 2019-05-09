@@ -1,21 +1,19 @@
-import {changeAvatar} from './actions';
-
 const initialState = {
     'username': '',
     'password': '',
-    'user': {}
+    'avatar': process.env.PUBLIC_URL + '/uploads/thumb.png'
 };
 
 const userReducer = (state = initialState, action) => {
     switch(action.type) {
-        case changeAvatar.type:
+        case "CHANGE_AVATAR":
             return {...state,
-                'avatar': changeAvatar.payload
+                'avatar': action.payload
             };
 
         case 'GET_USER_DATA':
             return {...state,
-                'user': action.data
+                'user': action.payload
             };
     }
     return state;
