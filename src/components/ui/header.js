@@ -3,19 +3,21 @@ import '../../css/header.css'
 import logo from '../../logo.png';
 import {Link, NavLink, Redirect} from 'react-router-dom';
 import cookies from "../../cookies";
-import {changeAvatar, getUserData} from '../../redux/store/user/actions';
+import {changeAvatar, changeUserSettings} from '../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
 function mappingData(state) {
-    console.log(state);
     return {
         avatar: state.userReducer.avatar,
+        // username: state.userReducer.user.username,
+        // first_name: state.userReducer.user.first_name,
+        // last_name: state.userReducer.user.last_name,
     };
 }
 
 const mapDispatchToComponent = {
     changeAvatar,
-    getUserData
+    changeUserSettings,
 };
 
 
@@ -62,8 +64,6 @@ class Header extends React.Component {
     }
 
     HeaderDOM() {
-        const username = getUserData().payload.username;
-
         return (
             <header>
                 <nav>
@@ -122,7 +122,7 @@ class Header extends React.Component {
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
                                         <li>
                                             <NavLink className="DropDownMenuBtn" activeClassName="active" to="/profile">
-                                                {username}
+                                               {this.props.user.first_name && this.props.user.last_name === '' ? this.props.user.username : this.props.user.first_name + ' ' + this.props.user.last_name}
                                             </NavLink>
                                         </li>
                                         <li>
@@ -149,7 +149,7 @@ class Header extends React.Component {
     }
 
     render() {
-        if (!getUserData().payload) return null;
+        if (!token) return null;
         return this.HeaderDOM();
     }
 

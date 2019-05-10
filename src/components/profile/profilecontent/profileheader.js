@@ -1,11 +1,12 @@
 import React from 'react';
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {changeAvatar, getUserData} from '../../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
 function mappingData(state) {
     return {
         avatar: state.userReducer.avatar,
+        user: state.userReducer.user
     };
 }
 
@@ -28,8 +29,6 @@ class ProfileHeader extends React.Component {
 
     render() {
 
-        const username = getUserData().payload.username;
-
         return (
             <div className="ProfileCover"
                  style={{backgroundImage: 'url(' + process.env.PUBLIC_URL + '/uploads/cover.jpg)'}}>
@@ -39,7 +38,9 @@ class ProfileHeader extends React.Component {
                         <i className="fas fa-upload"></i>
                     </div>
                 </div>
-                <div className="ProfileName">{username}</div>
+                <div className="ProfileName">
+                    {this.props.user.first_name && this.props.user.last_name === '' ? this.props.user.username : this.props.user.first_name + ' ' + this.props.user.last_name}
+                </div>
                 <div className="ProfileMenu">
                     <ul>
                         <li>

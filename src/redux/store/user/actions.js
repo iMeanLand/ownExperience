@@ -1,26 +1,33 @@
-import cookies from "../../../cookies";
-let userData = false;
-if (cookies.getCookie('user')) userData = JSON.parse(cookies.getCookie('user'));
-
-const _changeAvatar = {
-    type: 'CHANGE_AVATAR',
-    payload: process.env.PUBLIC_URL + '/uploads/developers.jpg'
-};
+function changeUserSettings(userData) {
+    return {
+        type: 'CHANGE_USER_SETTINGS',
+        payload: userData
+    }
+}
 
 function getUserData() {
+    let userData = {
+        username: 'jorik',
+        first_name: 'jora',
+        last_name: 'pupkin',
+        email: 'alin.tabuci@wippo.it'
+    };
+
     return {
         type: 'GET_USER_DATA',
         payload: userData
     }
 }
 
-
 function changeAvatar() {
-    return _changeAvatar;
+    return {
+        type: 'CHANGE_AVATAR',
+        payload: process.env.PUBLIC_URL + '/uploads/developers.jpg'
+    }
 }
-
 
 export {
     changeAvatar,
+    changeUserSettings,
     getUserData
 }

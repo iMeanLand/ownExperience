@@ -1,5 +1,5 @@
 import React from 'react';
-import {changeAvatar, getUserData} from '../../../redux/store/user/actions';
+import {changeAvatar} from '../../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
 function mappingData(state) {
@@ -9,8 +9,7 @@ function mappingData(state) {
 }
 
 const mapDispatchToComponent = {
-    changeAvatar,
-    getUserData
+    changeAvatar
 };
 
 

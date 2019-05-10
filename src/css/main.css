@@ -68,6 +68,11 @@ h1, h2, h3, h4, h5, p {
     box-sizing: border-box;
 }
 
+.formLabel {
+    width: 100%;
+    display: block;
+}
+
 .Row {
     display: flex;
     flex-flow: row wrap;
@@ -79,18 +84,22 @@ h1, h2, h3, h4, h5, p {
 
 .ThreeColumn {
     width: 30%;
+    display: block;
 }
 
 .TwoColumn {
     width: 50%;
+    display: block;
 }
 
 .FourColumn {
     width: 25%;
+    display: block;
 }
 
 .OneColumn {
     width: 100%;
+    display: block;
 }
 
 .text-center {
@@ -119,4 +128,44 @@ h1, h2, h3, h4, h5, p {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+#ChangeSettingsForm {
+    width: 100%;
+}
+
+#ChangeSettingsForm label {
+    margin-bottom: 25px;
+    display: block;
+    padding: 0 15px;
+}
+
+.formInput {
+    box-sizing: border-box;
+    padding: 5px 15px;
+    /*border-bottom-right-radius: 6px;*/
+    /*border-top-right-radius: 6px;*/
+    border: 1px solid #efefef;
+    border-left: 2px solid #42a5f6;
+    width: 100%;
+}
+
+.formInput.disabled {
+    border-left: 2px solid red;
+}
+
+.formLabel {
+    font-size: 14px;
+    color: #758e9d;
+    padding-bottom: 10px;
+}
+
+.formSubmit {
+    background: #42a5f6;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.15);
+    border: none;
+    color: #FFF;
+    padding: 6px 24px;
+    cursor: pointer;
+    border-radius: 3px;
 }

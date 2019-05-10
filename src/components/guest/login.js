@@ -3,7 +3,6 @@ import '../../css/main.css';
 import '../../css/welcome.css';
 import $ from 'jquery';
 import cookies from "../../cookies";
-import {Redirect} from 'react-router-dom';
 
 class Login extends React.Component {
 
@@ -15,15 +14,11 @@ class Login extends React.Component {
         e.preventDefault();
 
         let username = $('#UsernameInput').val();
-        let password = $('#PasswordInput').val();
+        // let password = $('#PasswordInput').val();
 
-        const user = {
-            'username': username,
-            'password': password,
-            'avatar': null
-        };
+        userDataObject.username = username;
 
-        cookies.setCookie('user', JSON.stringify(user), 30);
+        cookies.setCookie('user', JSON.stringify(userDataObject), 30);
 
         this.props.history.go('/');
     };
