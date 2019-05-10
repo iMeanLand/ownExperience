@@ -3,7 +3,6 @@ import '../../css/header.css'
 import logo from '../../logo.png';
 import {Link, NavLink, Redirect} from 'react-router-dom';
 import cookies from "../../cookies";
-import userData from "../userdata";
 import {changeAvatar, getUserData} from '../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
@@ -63,6 +62,8 @@ class Header extends React.Component {
     }
 
     HeaderDOM() {
+        const username = getUserData().payload.username;
+
         return (
             <header>
                 <nav>
@@ -121,7 +122,7 @@ class Header extends React.Component {
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
                                         <li>
                                             <NavLink className="DropDownMenuBtn" activeClassName="active" to="/profile">
-                                                {userData.username}
+                                                {username}
                                             </NavLink>
                                         </li>
                                         <li>
@@ -148,7 +149,7 @@ class Header extends React.Component {
     }
 
     render() {
-        if (!userData) return null;
+        if (!getUserData().payload) return null;
         return this.HeaderDOM();
     }
 

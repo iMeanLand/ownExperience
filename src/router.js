@@ -11,7 +11,7 @@ import Profile from "./components/profile/profile";
 import Notfound from "./components/404/notfound";
 import Register from "./components/guest/register";
 import Login from "./components/guest/login";
-import userData from './components/userdata';
+import {getUserData} from './redux/store/user/actions';
 
 import About from './components/profile/profilecontent/about';
 import Gallery from './components/profile/profilecontent/gallery';
@@ -24,7 +24,7 @@ const routing = (
     <Router>
         <Header />
         <Switch>
-            <Route exact path="/" component={ (!userData) ? Register : Feed }/>
+            <Route exact path="/" component={ (!getUserData().payload) ? Register : Feed }/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>

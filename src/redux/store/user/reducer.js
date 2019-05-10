@@ -1,7 +1,8 @@
 const initialState = {
     'username': '',
     'password': '',
-    'avatar': process.env.PUBLIC_URL + '/uploads/thumb.png'
+    'avatar': process.env.PUBLIC_URL + '/uploads/thumb.png',
+    'user': false
 };
 
 const userReducer = (state = initialState, action) => {

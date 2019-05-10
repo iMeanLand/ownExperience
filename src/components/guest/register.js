@@ -3,12 +3,13 @@ import '../../css/main.css';
 import '../../css/welcome.css';
 import $ from 'jquery';
 import cookies from '../../cookies';
-import {Redirect} from 'react-router-dom';
 
 class Register extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
@@ -34,9 +35,7 @@ class Register extends React.Component {
             <div className="WelcomePage">
                 <div className="WelcomePageContent">
                     <h1>Register Page</h1>
-                    <form id="RegisterForm" onSubmit={(e) => this.handleSubmit(e)}>
-                    {/*<form id="RegisterForm" onSubmit={(e) => this.setFormValues(e)}>*/}
-                        {/*<input type="text" placeholder="Username" id="UsernameInput" onChange={(e) => this.setName(e)} className="TypeInput" required />*/}
+                    <form id="RegisterForm" onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="Username" id="UsernameInput" className="TypeInput" required />
                         <input type="password" placeholder="Password" id="PasswordInput" className="TypeInput" required />
                         <input type="submit" />
