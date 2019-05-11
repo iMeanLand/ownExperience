@@ -5,14 +5,15 @@ function changeUserSettings(userData) {
     }
 }
 
-function getUserData() {
-    let userData = {
-        username: 'jorik',
-        first_name: 'jora',
-        last_name: 'pupkin',
-        email: 'alin.tabuci@wippo.it'
-    };
+let userData = {
+    avatar: process.env.PUBLIC_URL + '/uploads/thumb.png',
+    username: 'jorik',
+    first_name: 'jora',
+    last_name: 'pupkin',
+    email: 'alin.tabuci@wippo.it'
+};
 
+function getUserData() {
     return {
         type: 'GET_USER_DATA',
         payload: userData

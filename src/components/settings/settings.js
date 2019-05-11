@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 
 function mappingData(state) {
     return {
-        user: state.userReducer.user
+        user: state.userReducer
     };
 }
 

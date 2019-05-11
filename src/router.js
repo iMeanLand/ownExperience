@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link, BrowserRouter as Router, Switch} from 'react-router-dom'
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
 
 import Header from "./components/ui/header";
 import Footer from "./components/ui/footer";
@@ -18,12 +18,15 @@ import Friends from './components/profile/profilecontent/friends';
 import ProfileGroups from './components/profile/profilecontent/groups';
 import './css/main.css';
 import Settings from "./components/settings/settings";
+import cookies from "./cookies";
+
+global.token = cookies.getCookie('token');
 
 const routing = (
     <Router>
         <Header />
         <Switch>
-            <Route exact path="/" component={ (!token) ? Login : Feed }/>
+            <Route exact path="/" component={ (!global.token) ? Login : Feed }/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>

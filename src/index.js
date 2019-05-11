@@ -7,8 +7,6 @@ import {createStore} from "redux";
 import {globalReducer} from './redux/store/globalreducer';
 import {Provider} from 'react-redux';
 
-global.token = cookies.getCookie('token');
-
 const store = createStore(globalReducer);
 ReactDOM.render(
     <Provider store={store}>

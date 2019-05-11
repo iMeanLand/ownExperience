@@ -1,15 +1,16 @@
 import React from 'react';
-import {changeAvatar} from '../../../redux/store/user/actions';
+import {changeAvatar, getUserData} from '../../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
 function mappingData(state) {
     return {
-        avatar: state.userReducer.avatar,
+        user: state.userReducer
     };
 }
 
 const mapDispatchToComponent = {
-    changeAvatar
+    changeAvatar,
+    getUserData
 };
 
 
@@ -18,7 +19,7 @@ function addpost(props) {
         <div className="FeedAddPost">
             <div className="FeedAddPostHeader">
                 <div className="byUser">
-                    <div className="byUserAvatar" style={{backgroundImage: 'url("' + props.avatar + '")'}}>
+                    <div className="byUserAvatar" style={{backgroundImage: 'url("' + props.user.avatar + '")'}}>
                     </div>
                     Add post title
                 </div>

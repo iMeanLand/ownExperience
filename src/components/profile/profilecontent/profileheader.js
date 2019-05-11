@@ -5,9 +5,9 @@ import {connect} from 'react-redux';
 
 function mappingData(state) {
     return {
-        avatar: state.userReducer.avatar,
-        user: state.userReducer.user
+        user: state.userReducer
     };
+
 }
 
 const mapDispatchToComponent = {
@@ -23,7 +23,7 @@ class ProfileHeader extends React.Component {
         this.handleUploadAvatar = this.handleUploadAvatar.bind(this);
     }
 
-    handleUploadAvatar(e) {
+    handleUploadAvatar() {
         this.props.changeAvatar();
     }
 
@@ -33,7 +33,7 @@ class ProfileHeader extends React.Component {
             <div className="ProfileCover"
                  style={{backgroundImage: 'url(' + process.env.PUBLIC_URL + '/uploads/cover.jpg)'}}>
                 <div className="ProfileAvatar"
-                     style={{backgroundImage: 'url(' + this.props.avatar + ')'}}>
+                     style={{backgroundImage: 'url(' + this.props.user.avatar + ')'}}>
                     <div className="ProfileUploadAvatar" onClick={this.handleUploadAvatar}>
                         <i className="fas fa-upload"></i>
                     </div>

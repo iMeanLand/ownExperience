@@ -1,23 +1,21 @@
 import React from 'react';
 import '../../css/header.css'
 import logo from '../../logo.png';
-import {Link, NavLink, Redirect} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import cookies from "../../cookies";
-import {changeAvatar, changeUserSettings} from '../../redux/store/user/actions';
+import {changeAvatar, getUserData} from '../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
 function mappingData(state) {
     return {
-        avatar: state.userReducer.avatar,
-        // username: state.userReducer.user.username,
-        // first_name: state.userReducer.user.first_name,
-        // last_name: state.userReducer.user.last_name,
+        user: state.userReducer
     };
+
 }
 
 const mapDispatchToComponent = {
     changeAvatar,
-    changeUserSettings,
+    getUserData
 };
 
 
@@ -28,6 +26,10 @@ class Header extends React.Component {
         this.displayFriendsNotificationsList = this.displayFriendsNotificationsList.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
         this.props = props;
+    }
+
+    componentDidMount() {
+        this.props.getUserData();
     }
 
     displayFriendsNotificationsList() {
@@ -76,17 +78,17 @@ class Header extends React.Component {
                             <li className="navigationLink">
                                 <a href="#friends" className="friendsBtn"
                                    onClick={this.displayFriendsNotificationsList}>
-                                    <div className="friendsNotificationsList hidden">
-                                        <div className="NotificationsListHeader">
-                                            Friends Notifications List
-                                        </div>
-                                        <div className="NotificationsListContent">
-                                            No notifications found
-                                        </div>
-                                    </div>
                                     <i className="fas fa-user-friends">
                                     </i>
                                 </a>
+                                <div className="friendsNotificationsList hidden">
+                                    <div className="NotificationsListHeader">
+                                        Friends Notifications List
+                                    </div>
+                                    <div className="NotificationsListContent">
+                                        No notifications found
+                                    </div>
+                                </div>
                             </li>
                             <li className="navigationLink">
                                 <a href="#chat">
@@ -116,7 +118,7 @@ class Header extends React.Component {
                                 <span className="profileBlock">
                                     <div className="profileImage"
                                          onClick={this.handleProfileDropdown}
-                                         style={{backgroundImage: 'url(' + this.props.avatar + ')'}}>
+                                         style={{backgroundImage: 'url(' + this.props.user.avatar + ')'}}>
                                         <i className="fas fa-angle-down"></i>
                                     </div>
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
@@ -149,7 +151,7 @@ class Header extends React.Component {
     }
 
     render() {
-        if (!token) return null;
+        if (!global.token) return null;
         return this.HeaderDOM();
     }
 

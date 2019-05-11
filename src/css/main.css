@@ -142,12 +142,13 @@ h1, h2, h3, h4, h5, p {
 
 .formInput {
     box-sizing: border-box;
-    padding: 5px 15px;
     /*border-bottom-right-radius: 6px;*/
     /*border-top-right-radius: 6px;*/
     border: 1px solid #efefef;
     border-left: 2px solid #42a5f6;
     width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
 }
 
 .formInput.disabled {
@@ -167,5 +168,6 @@ h1, h2, h3, h4, h5, p {
     color: #FFF;
     padding: 6px 24px;
     cursor: pointer;
+    font-size: 14px;
     border-radius: 3px;
 }

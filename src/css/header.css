@@ -37,6 +37,10 @@ nav {
     margin-right: 20px;
 }
 
+.navigationLink {
+    position: relative;
+}
+
 .navigationLink .active i {
     color: #61dafb;
 }

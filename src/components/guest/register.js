@@ -3,6 +3,7 @@ import '../../css/main.css';
 import '../../css/welcome.css';
 import $ from 'jquery';
 import cookies from '../../cookies';
+import token from '../../token';
 
 class Register extends React.Component {
 
@@ -18,9 +19,7 @@ class Register extends React.Component {
         let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
-        userDataObject.username = username;
-
-        cookies.setCookie('user', JSON.stringify(userDataObject), 30);
+        cookies.setCookie('token', token, 30);
 
         this.props.history.go('/');
 
