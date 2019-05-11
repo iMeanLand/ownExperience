@@ -44,7 +44,7 @@ class Header extends React.Component {
     }
 
     handleLogout() {
-        cookies.removeCookie('user');
+        cookies.removeCookie('token');
         window.location.href = '/';
     }
 
@@ -124,7 +124,9 @@ class Header extends React.Component {
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
                                         <li>
                                             <NavLink className="DropDownMenuBtn" activeClassName="active" to="/profile">
-                                               {this.props.user.first_name && this.props.user.last_name === '' ? this.props.user.username : this.props.user.first_name + ' ' + this.props.user.last_name}
+                                               {this.props.user.first_name && this.props.user.last_name === ''
+                                                   ? this.props.user.username
+                                                   : this.props.user.first_name + ' ' + this.props.user.last_name}
                                             </NavLink>
                                         </li>
                                         <li>

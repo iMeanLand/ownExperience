@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import routing from './router';
 import * as serviceWorker from './serviceWorker';
-import cookies from './cookies';
 import {createStore} from "redux";
 import {globalReducer} from './redux/store/globalreducer';
 import {Provider} from 'react-redux';

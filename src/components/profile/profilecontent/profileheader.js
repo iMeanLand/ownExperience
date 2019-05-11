@@ -39,7 +39,9 @@ class ProfileHeader extends React.Component {
                     </div>
                 </div>
                 <div className="ProfileName">
-                    {this.props.user.first_name && this.props.user.last_name === '' ? this.props.user.username : this.props.user.first_name + ' ' + this.props.user.last_name}
+                    {this.props.user.first_name && this.props.user.last_name === ''
+                        ? this.props.user.username
+                        : this.props.user.first_name + ' ' + this.props.user.last_name}
                 </div>
                 <div className="ProfileMenu">
                     <ul>

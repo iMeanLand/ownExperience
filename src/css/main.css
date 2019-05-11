@@ -171,3 +171,47 @@ h1, h2, h3, h4, h5, p {
     font-size: 14px;
     border-radius: 3px;
 }
+
+.AlertSuccess {
+    position: fixed;
+    right: -100%;
+    background: #dff0d7;
+    bottom: 25px;
+    padding: 10px;
+    font-size: 14px;
+    color: #528952;
+    width: 280px;
+    transition: all 1s ease;
+    border-left: 3px solid #81cf81;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.15);
+}
+
+.AlertFailed {
+    position: fixed;
+    right: -100%;
+    background: #f2dede;
+    bottom: 25px;
+    padding: 10px;
+    font-size: 14px;
+    color: #ac4642;
+    transition: all 1s ease;
+    border-left: 3px solid #e35a56;
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.15);
+}
+
+.alertHeading {
+    font-size: 12px;
+}
+
+.alertContent {
+    font-size: 16px;
+}
+
+.formLabel span {
+    float: right;
+    cursor: pointer;
+}
+
+.formLabel span i {
+    font-size: 16px;
+}
