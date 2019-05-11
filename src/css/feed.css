@@ -137,3 +137,8 @@
 .FeedAddPostButton:hover .FeedAddPostButton::before {
     background-color: #50acca;
 }
+
+.FeedPostHeader a {
+    text-decoration: none;
+    color: #76919c;
+}

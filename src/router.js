@@ -34,11 +34,11 @@ const routing = (
             <Route exact path="/pages" component={Pages}/>
             <Route exact path="/settings" component={Settings}/>
             {/*Profile Pages*/}
-            <Route exact path="/profile" component={Profile}/>
-            <Route exact path="/profile/about" component={About}/>
-            <Route exact path="/profile/gallery" component={Gallery}/>
-            <Route exact path="/profile/friends" component={Friends}/>
-            <Route exact path="/profile/groups" component={ProfileGroups}/>
+            <Route exact path="/profile/:username" component={Profile}/>
+            <Route exact path="/profile/:username/about" component={About}/>
+            <Route exact path="/profile/:username/gallery" component={Gallery}/>
+            <Route exact path="/profile/:username/friends" component={Friends}/>
+            <Route exact path="/profile/:username/groups" component={ProfileGroups}/>
             <Route component={Notfound}/>
         </Switch>
         <Footer />

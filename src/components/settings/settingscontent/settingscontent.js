@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import {changeUserSettings, getUserData} from "../../../redux/store/user/actions";
+import {changeUserSettings, setUserData} from "../../../redux/store/user/actions";
 import {connect} from "react-redux";
 import AlertSuccess from '../../modules/alerts/alertsuccess';
 import AlertFailed from '../../modules/alerts/alertfailed';
@@ -14,7 +14,7 @@ function mappingData(state) {
 
 const mapDispatchToComponent = {
     changeUserSettings,
-    getUserData
+    setUserData
 };
 
 

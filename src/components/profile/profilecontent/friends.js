@@ -1,20 +1,11 @@
 import React from 'react';
 import Sidebar from '../../sidebar/feed/sidebar';
 import ProfileHeader from './profileheader';
-import UserData from '../../feed/feedcontent/posts/postData';
+import {Link} from "react-router-dom";
+import postsData from '../../feed/feedcontent/posts/postData';
 
 function Friends() {
-
-    const Friends = UserData.map((value) => (
-        <div className="ThreeColumn">
-            <div className="FriendBlock text-center">
-                <div className="FriendsAvatar"
-                     style={{backgroundImage: 'url("' + process.env.PUBLIC_URL + '/uploads/' + value.image + '")'}}></div>
-                <div className="FriendsUserContent mgBottom">{value.by}</div>
-            </div>
-        </div>
-    ));
-
+    let value = null;
     return (
         <div className="Container">
             <ProfileHeader/>
@@ -25,7 +16,20 @@ function Friends() {
                     </div>
                     <div className="PageContent">
                         <div className="Row">
-                            {Friends}
+                            {Object.keys(postsData).map(function(key) {
+                                {value = postsData[key]}
+                                return (
+                                <div className="ThreeColumn mgBottom text-center">
+                                    <div className="FriendBlock">
+                                        <Link to={'/profile/' + key}>
+                                            <div className="FriendsAvatar"
+                                                 style={{backgroundImage: 'url("' + process.env.PUBLIC_URL + '/uploads/' + value.avatar + '")'}}></div>
+                                        </Link>
+                                        <div className="FriendsUserContent">{value.by}</div>
+                                    </div>
+                                </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>

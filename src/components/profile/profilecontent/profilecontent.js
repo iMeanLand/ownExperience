@@ -1,5 +1,4 @@
 import React from 'react';
-import AddPost from '../../actions/posts/addpost';
 import Sidebar from '../../sidebar/profile/sidebar';
 import Timeline from '../../feed/feedcontent/timeline';
 

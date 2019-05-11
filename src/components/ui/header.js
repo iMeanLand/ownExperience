@@ -3,7 +3,7 @@ import '../../css/header.css'
 import logo from '../../logo.png';
 import {Link, NavLink} from 'react-router-dom';
 import cookies from "../../cookies";
-import {changeAvatar, getUserData} from '../../redux/store/user/actions';
+import {setMiscAvatar, setUserData} from '../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
 function mappingData(state) {
@@ -14,8 +14,8 @@ function mappingData(state) {
 }
 
 const mapDispatchToComponent = {
-    changeAvatar,
-    getUserData
+    setMiscAvatar,
+    setUserData
 };
 
 
@@ -29,7 +29,7 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getUserData();
+        this.props.setUserData();
     }
 
     displayFriendsNotificationsList() {
@@ -66,6 +66,12 @@ class Header extends React.Component {
     }
 
     HeaderDOM() {
+        let name = this.props.user.username;
+
+        if (this.props.user.first_name !== null && this.props.user.last_name !== null) {
+            name = this.props.user.first_name + ' ' + this.props.user.last_name;
+        }
+
         return (
             <header>
                 <nav>
@@ -123,10 +129,8 @@ class Header extends React.Component {
                                     </div>
                                     <ul className="profileMenuDropdown hidden" onClick={this.handleCloseDropdown}>
                                         <li>
-                                            <NavLink className="DropDownMenuBtn" activeClassName="active" to="/profile">
-                                               {this.props.user.first_name && this.props.user.last_name === ''
-                                                   ? this.props.user.username
-                                                   : this.props.user.first_name + ' ' + this.props.user.last_name}
+                                            <NavLink className="DropDownMenuBtn" activeClassName="active" to={'/profile/' + this.props.user.username}>
+                                                {name}
                                             </NavLink>
                                         </li>
                                         <li>

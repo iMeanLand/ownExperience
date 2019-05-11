@@ -1,5 +1,5 @@
 import React from 'react';
-import {changeAvatar, getUserData} from '../../../redux/store/user/actions';
+import {setMiscAvatar, setUserData} from '../../../redux/store/user/actions';
 import {connect} from 'react-redux';
 
 function mappingData(state) {
@@ -9,12 +9,15 @@ function mappingData(state) {
 }
 
 const mapDispatchToComponent = {
-    changeAvatar,
-    getUserData
+    setMiscAvatar,
+    setUserData
 };
 
-
 function addpost(props) {
+    // Temp version until will figure out how to get route URL param
+    let profile = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1, window.location.pathname.length);
+
+    if (props.user.username !== profile) return null;
     return (
         <div className="FeedAddPost">
             <div className="FeedAddPostHeader">

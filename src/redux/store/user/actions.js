@@ -7,28 +7,31 @@ function changeUserSettings(userData) {
 
 let userData = {
     avatar: process.env.PUBLIC_URL + '/uploads/thumb.png',
-    username: 'jorik',
+    username: 'jora.pupkin',
     first_name: 'jora',
     last_name: 'pupkin',
-    email: 'alin.tabuci@wippo.it'
+    email: 'alin.tabuci@wippo.it',
+    token: 'y08fh3jyvlm09cpa9958uv'
 };
 
-function getUserData() {
+// Current logged in user data
+function setUserData() {
+    console.log(userData);
     return {
         type: 'GET_USER_DATA',
         payload: userData
     }
 }
 
-function changeAvatar() {
+function setMiscAvatar() {
     return {
-        type: 'CHANGE_AVATAR',
+        type: 'SET_MISC_AVATAR',
         payload: process.env.PUBLIC_URL + '/uploads/developers.jpg'
     }
 }
 
 export {
-    changeAvatar,
+    setMiscAvatar,
     changeUserSettings,
-    getUserData
+    setUserData,
 }

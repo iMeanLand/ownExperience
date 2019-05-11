@@ -1,14 +1,9 @@
 import React from 'react';
 import postsData from '../../feed/feedcontent/posts/postData';
+import {Link} from "react-router-dom";
 
 function FriendsActivity() {
-
-    const FriendsAcivity = postsData.map((value) => (
-        <div className="FriendsActivityBlock">
-            <div className="FriendsActivityAvatar" style={{backgroundImage: 'url("'+ process.env.PUBLIC_URL + '/uploads/' + value.image +'")'}}></div>
-            <div className="FriendsActivityUserContent">{value.by}</div>
-        </div>
-    ));
+    let value = '';
 
     return (
         <div className="FriendsActivity">
@@ -16,7 +11,18 @@ function FriendsActivity() {
                 Friends Activity
             </div>
             <div className="FriendsActivityContent">
-                {FriendsAcivity}
+                {Object.keys(postsData).map((k, i) => {
+                    value = postsData[k];
+                    return (
+                        <div className="FriendsActivityBlock">
+                            <Link to={'/profile/' + k}>
+                                <div className="FriendsActivityAvatar"
+                                     style={{backgroundImage: 'url("' + process.env.PUBLIC_URL + '/uploads/' + value.avatar + '")'}}></div>
+                            </Link>
+                            <div className="FriendsActivityUserContent">{value.by}</div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     )

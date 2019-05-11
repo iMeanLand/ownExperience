@@ -8,7 +8,7 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'CHANGE_AVATAR':
+        case 'SET_MISC_AVATAR':
             return {...state,
                 avatar: action.payload
             };

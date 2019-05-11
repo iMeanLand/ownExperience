@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 class AlertSuccess {
 
-    static displayAlert(heading, content) {
+    static displayAlert(heading = 'Done', content = 'Action is done successfully') {
         if (heading && content) {
             let alertTemplate = (
                 <div id="AlertSuccess" className="AlertSuccess">

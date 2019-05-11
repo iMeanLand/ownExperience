@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 class AlertFailed {
 
-    static displayAlert(heading, content) {
+    static displayAlert(heading = 'Failed', content = 'Oops, something went wrong, please try again later') {
         if (heading && content) {
             let alertTemplate = (
                 <div className="AlertFailed">
