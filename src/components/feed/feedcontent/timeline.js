@@ -8,7 +8,6 @@ const MyComponents = {
 };
 
 class Timeline extends React.Component {
-
     constructor(props) {
         super(props);
 

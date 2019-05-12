@@ -3,8 +3,9 @@ import Sidebar from '../../sidebar/feed/sidebar';
 import ProfileHeader from './profileheader';
 import GroupsData from '../../groupsData';
 
-function Groups() {
+function Groups(props) {
 
+    const currentProfile = props.match.params.username;
     const Groups = GroupsData.map((value) => (
 
         <div className="OneColumn">
@@ -29,7 +30,7 @@ function Groups() {
 
     return (
         <div className="Container">
-            <ProfileHeader/>
+            <ProfileHeader currentProfile={currentProfile}/>
             <div className="PageContainer">
                 <div className="PageContainerContent">
                     <div className="PageHeader">

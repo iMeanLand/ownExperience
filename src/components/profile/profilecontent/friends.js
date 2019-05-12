@@ -4,11 +4,12 @@ import ProfileHeader from './profileheader';
 import {Link} from "react-router-dom";
 import postsData from '../../feed/feedcontent/posts/postData';
 
-function Friends() {
+function Friends(props) {
+    const currentProfile = props.match.params.username;
     let value = null;
     return (
         <div className="Container">
-            <ProfileHeader/>
+            <ProfileHeader currentProfile={currentProfile}/>
             <div className="PageContainer">
                 <div className="PageContainerContent">
                     <div className="PageHeader">

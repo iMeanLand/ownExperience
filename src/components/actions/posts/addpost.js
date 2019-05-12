@@ -1,6 +1,7 @@
 import React from 'react';
 import {setMiscAvatar, setUserData} from '../../../redux/store/user/actions';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 function mappingData(state) {
     return {
@@ -13,29 +14,41 @@ const mapDispatchToComponent = {
     setUserData
 };
 
-function addpost(props) {
-    // Temp version until will figure out how to get route URL param
-    let profile = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1, window.location.pathname.length);
+class AddPost extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    if (props.user.username !== profile) return null;
-    return (
-        <div className="FeedAddPost">
-            <div className="FeedAddPostHeader">
-                <div className="byUser">
-                    <div className="byUserAvatar" style={{backgroundImage: 'url("' + props.user.avatar + '")'}}>
+    render() {
+        this.currentProfile = this.context.currentProfile;
+        console.log('Username: ' + this.props.user.username);
+        console.log('CurrentProfile: ' + this.currentProfile);
+        if (this.props.user.username !== this.currentProfile) return null;
+
+        return (
+            <div className="FeedAddPost">
+                <div className="FeedAddPostHeader">
+                    <div className="byUser">
+                        <div className="byUserAvatar" style={{backgroundImage: 'url("' + this.props.user.avatar + '")'}}>
+                        </div>
+                        Add post title
                     </div>
-                    Add post title
                 </div>
-            </div>
-            <div className="FeedAddPostContent">
+                <div className="FeedAddPostContent">
                 <textarea className="FeedAddPostInput" placeholder="Post something in your time line">
                 </textarea>
+                </div>
+                <div className="FeedPostActions UserAction">
+                    <span className="FeedAddPostButton"><i className="fas fa-paper-plane"></i></span>
+                </div>
             </div>
-            <div className="FeedPostActions UserAction">
-                <span className="FeedAddPostButton"><i className="fas fa-paper-plane"></i></span>
-            </div>
-        </div>
-    )
+        )
+    }
+
 }
 
-export default connect(mappingData, mapDispatchToComponent)(addpost);
+AddPost.contextTypes = {
+    currentProfile: PropTypes.string
+};
+
+export default connect(mappingData, mapDispatchToComponent)(AddPost);

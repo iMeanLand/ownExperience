@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 import {setMiscAvatar} from '../../../redux/store/user/actions';
 import {setProfileUserData, setProfileAvatar} from '../../../redux/store/profile/actions';
 import {connect} from 'react-redux';
+import AlertSuccess from '../../modules/alerts/alertsuccess';
 
 function mappingData(state) {
     return {
@@ -23,24 +24,25 @@ class ProfileHeader extends React.Component {
         super(props);
 
         this.handleUploadAvatar = this.handleUploadAvatar.bind(this);
+        this.currentProfile = this.props.currentProfile;
     }
 
     componentDidMount() {
         // Get current profile name
-        // Temp version until will figure out how to get route URL param
-        this.profile = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1, window.location.pathname.length);
-        this.props.setProfileUserData(this.profile);
+        this.props.setProfileUserData(this.currentProfile);
     }
 
     handleUploadAvatar() {
         this.props.setProfileAvatar();
         this.props.setMiscAvatar();
+
+        AlertSuccess.displayAlert('Avatar', 'Avatar uploaded successfully');
     }
 
     render() {
         let uploadAvatar = null;
 
-        if (this.props.profile.token === global.token) {
+        if (this.props.profile.username === this.currentProfile) {
             uploadAvatar = (
                 <div className="ProfileUploadAvatar" onClick={this.handleUploadAvatar}>
                     <i className="fas fa-upload"></i>
@@ -66,27 +68,27 @@ class ProfileHeader extends React.Component {
                 <div className="ProfileMenu">
                     <ul>
                         <li>
-                            <NavLink exact to={'/profile/' + this.profile}>
+                            <NavLink exact to={'/profile/' + this.currentProfile}>
                                 Timeline
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink exact to={'/profile/' + this.profile + '/about'}>
+                            <NavLink exact to={'/profile/' + this.currentProfile + '/about'}>
                                 About
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink exact to={'/profile/' + this.profile + '/gallery'}>
+                            <NavLink exact to={'/profile/' + this.currentProfile + '/gallery'}>
                                 Gallery
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink exact to={'/profile/' + this.profile + '/friends'}>
+                            <NavLink exact to={'/profile/' + this.currentProfile + '/friends'}>
                                 Friends
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink exact to={'/profile/' + this.profile + '/groups'}>
+                            <NavLink exact to={'/profile/' + this.currentProfile + '/groups'}>
                                 Groups
                             </NavLink>
                         </li>

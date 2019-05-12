@@ -2,10 +2,13 @@ import React from 'react';
 import Sidebar from '../../sidebar/feed/sidebar';
 import ProfileHeader from './profileheader';
 
-function Gallery() {
+function Gallery(props) {
+
+    const currentProfile = props.match.params.username;
+
     return (
         <div className="Container">
-            <ProfileHeader/>
+            <ProfileHeader currentProfile={currentProfile}/>
             <div className="PageContainer">
                 <div className="PageContainerContent">
                     <div className="PageHeader">
