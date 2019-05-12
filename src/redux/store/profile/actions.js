@@ -1,5 +1,5 @@
 // Some foreign profile
-import postData from "../../../components/feed/feedcontent/posts/postData";
+import postData from "../../../components/user/feed/feedcontent/posts/postData";
 
 function setProfileUserData(profile) {
     return {
