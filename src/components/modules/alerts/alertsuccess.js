@@ -17,10 +17,15 @@ class AlertSuccess {
                 </div>
             );
             ReactDOM.render(alertTemplate, document.getElementById('alerts'));
-            $('body .AlertSuccess').css('right', 0);
+            setTimeout(function() {
+                $('body .AlertSuccess').css('right', 0);
+            }, 50);
+            setTimeout(function() {
+                $('body .AlertSuccess').css('right', '-50%');
+            }, 4500);
             setTimeout(function() {
                 ReactDOM.unmountComponentAtNode(document.getElementById('alerts'));
-            }, 3000)
+            }, 5500)
         }
     }
 

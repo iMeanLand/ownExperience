@@ -1,12 +1,17 @@
 import React from 'react';
 import Sidebar from '../sidebar/settings/sidebar';
 import SettingsContent from './settingscontent/settingscontent';
+import Auth from "../../../helpers/Auth";
 
-class Settings extends React.Component {
+class AdminSettings extends React.Component {
+
+    componentWillMount() {
+        Auth.redirectIfNotAdminAuthenticated();
+    }
 
     render() {
-        return (
 
+        return (
             <div className="Container">
                 <SettingsContent/>
                 <Sidebar/>
@@ -17,4 +22,4 @@ class Settings extends React.Component {
 
 }
 
-export default Settings;
+export default AdminSettings;

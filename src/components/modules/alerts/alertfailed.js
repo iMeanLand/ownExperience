@@ -17,10 +17,15 @@ class AlertFailed {
                 </div>
             );
             ReactDOM.render(alertTemplate, document.getElementById('alerts'));
-            $('body .AlertFailed').css('right', 0);
+            setTimeout(function() {
+                $('body .AlertFailed').css('right', 0);
+            }, 50);
+            setTimeout(function() {
+                $('body .AlertFailed').css('right', '-50%');
+            }, 4500);
             setTimeout(function() {
                 ReactDOM.unmountComponentAtNode(document.getElementById('alerts'));
-            }, 3000)
+            }, 5500)
         }
     }
 

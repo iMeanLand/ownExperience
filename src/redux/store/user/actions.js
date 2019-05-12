@@ -22,10 +22,10 @@ function setUserData() {
     }
 }
 
-function setMiscAvatar() {
+function setMiscAvatar(avatar) {
     return {
         type: 'SET_MISC_AVATAR',
-        payload: process.env.PUBLIC_URL + '/uploads/developers.jpg'
+        payload: process.env.PUBLIC_URL + '/uploads/' + avatar
     }
 }
 

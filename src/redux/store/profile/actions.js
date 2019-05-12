@@ -8,10 +8,10 @@ function setProfileUserData(profile) {
     }
 }
 
-function setProfileAvatar() {
+function setProfileAvatar(avatar) {
     return {
         type: 'SET_PROFILE_AVATAR',
-        payload: 'developers.jpg'
+        payload: avatar
     }
 }
 

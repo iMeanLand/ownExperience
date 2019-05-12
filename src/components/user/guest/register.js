@@ -2,8 +2,9 @@ import React from 'react';
 import '../../../css/main.css';
 import '../../../css/welcome.css';
 // import $ from 'jquery';
-import cookies from '../../../cookies';
-import token from '../../../token';
+import cookies from '../../../helpers/cookies';
+import token from '../../../helpers/token';
+import Auth from "../../../helpers/Auth";
 
 class Register extends React.Component {
 
@@ -11,6 +12,10 @@ class Register extends React.Component {
         super(props);
 
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentWillMount() {
+        Auth.redirectIfIsAuthenticated();
     }
 
     handleSubmit(e) {

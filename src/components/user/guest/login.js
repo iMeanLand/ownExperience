@@ -1,15 +1,18 @@
 import React from 'react';
 import '../../../css/main.css';
 import '../../../css/welcome.css';
-// import $ from 'jquery';
-import cookies from "../../../cookies";
-import token from '../../../token';
+import cookies from "../../../helpers/cookies";
+import token from '../../../helpers/token';
+import Auth from "../../../helpers/Auth";
 
 class Login extends React.Component {
 
+    componentWillMount() {
+        Auth.redirectIfIsAuthenticated();
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
-
 
         // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();

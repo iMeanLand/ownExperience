@@ -3,7 +3,8 @@ import {NavLink} from "react-router-dom";
 import {setMiscAvatar} from '../../../../redux/store/user/actions';
 import {setProfileUserData, setProfileAvatar} from '../../../../redux/store/profile/actions';
 import {connect} from 'react-redux';
-import AlertSuccess from '../../modules/alerts/alertsuccess';
+import AlertSuccess from '../../../modules/alerts/alertsuccess';
+import GalleryPopup from './gallerypopup';
 
 function mappingData(state) {
     return {
@@ -28,13 +29,20 @@ class ProfileHeader extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
         // Get current profile name
         this.props.setProfileUserData(this.currentProfile);
     }
 
-    handleUploadAvatar() {
-        this.props.setProfileAvatar();
-        this.props.setMiscAvatar();
+    handleGalleryPopupClick() {
+        let gallery = document.getElementById('galleryPopup');
+        gallery.style.top = '0';
+        document.getElementsByClassName('floatingWrapper')[0].style.display = 'block';
+    }
+
+    handleUploadAvatar(avatar) {
+        this.props.setProfileAvatar(avatar);
+        this.props.setMiscAvatar(avatar);
 
         AlertSuccess.displayAlert('Avatar', 'Avatar uploaded successfully');
     }
@@ -44,7 +52,7 @@ class ProfileHeader extends React.Component {
 
         if (this.props.profile.username === this.currentProfile) {
             uploadAvatar = (
-                <div className="ProfileUploadAvatar" onClick={this.handleUploadAvatar}>
+                <div className="ProfileUploadAvatar" onClick={this.handleGalleryPopupClick}>
                     <i className="fas fa-upload"></i>
                 </div>
             );
@@ -94,6 +102,7 @@ class ProfileHeader extends React.Component {
                         </li>
                     </ul>
                 </div>
+                <GalleryPopup handleUploadAvatar={this.handleUploadAvatar} />
             </div>
         )
     }

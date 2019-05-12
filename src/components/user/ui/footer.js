@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../../css/footer.css'
+import Auth from "../../../helpers/Auth";
 
 function Footer() {
-
+    if (!Auth.isAuthenticated) return null;
     return (
         <footer>
             <div className="footerCol">

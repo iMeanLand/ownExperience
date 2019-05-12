@@ -2,9 +2,10 @@ import React from 'react';
 import '../../../css/header.css'
 import logo from '../../../logo.png';
 import {Link, NavLink} from 'react-router-dom';
-import cookies from "../../../cookies";
+import cookies from "../../../helpers/cookies";
 import {setMiscAvatar, setUserData} from '../../../redux/store/user/actions';
 import {connect} from 'react-redux';
+import Auth from "../../../helpers/Auth";
 
 function mappingData(state) {
     return {
@@ -24,7 +25,6 @@ class Header extends React.Component {
         super(props);
 
         this.displayFriendsNotificationsList = this.displayFriendsNotificationsList.bind(this);
-        this.handleLogout = this.handleLogout.bind(this);
         this.props = props;
     }
 
@@ -52,11 +52,6 @@ class Header extends React.Component {
             element.classList.add('hidden');
             document.getElementsByClassName('friendsBtn')[0].classList.remove('active');
         }
-    }
-
-    handleLogout() {
-        cookies.removeCookie('token');
-        window.location.href = '/';
     }
 
     handleProfileDropdown() {
@@ -155,7 +150,7 @@ class Header extends React.Component {
                                                      to="/settings">Settings</NavLink>
                                         </li>
                                         <li>
-                                            <span className="DropDownMenuBtn LogoutBtn" onClick={this.handleLogout}>
+                                            <span className="DropDownMenuBtn LogoutBtn" onClick={Auth.logOut}>
                                                 Log out
                                             </span>
                                         </li>
@@ -170,7 +165,7 @@ class Header extends React.Component {
     }
 
     render() {
-        if (!global.token) return null;
+        if (!Auth.isAuthenticated) return null;
         return this.HeaderDOM();
     }
 

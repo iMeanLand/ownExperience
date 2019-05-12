@@ -74,12 +74,18 @@ h1, h2, h3, h4, h5, p {
 }
 
 .Row {
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
 }
 
 .mgBottom {
     margin-bottom: 30px;
+}
+
+.FiveColumn {
+    width: 20%;
+    display: block;
 }
 
 .ThreeColumn {
@@ -172,31 +178,35 @@ h1, h2, h3, h4, h5, p {
     border-radius: 3px;
 }
 
+#alerts {
+    transition: all 0.1s ease;
+}
+
 .AlertSuccess {
     position: fixed;
-    right: -100%;
+    right: -50%;
     background: #dff0d7;
     bottom: 25px;
     padding: 10px;
     font-size: 14px;
     color: #528952;
     width: 280px;
-    transition: all 1s ease;
     border-left: 3px solid #81cf81;
     box-shadow: 0 5px 25px 0 rgba(0,0,0,.15);
+    transition: all 1s ease-in, all 1s ease-out;
 }
 
 .AlertFailed {
     position: fixed;
-    right: -100%;
+    right: -50%;
     background: #f2dede;
     bottom: 25px;
     padding: 10px;
     font-size: 14px;
     color: #ac4642;
-    transition: all 1s ease;
     border-left: 3px solid #e35a56;
     box-shadow: 0 5px 25px 0 rgba(0,0,0,.15);
+    transition: all 1s ease-in, all 1s ease-out;
 }
 
 .alertHeading {
@@ -230,4 +240,34 @@ h1, h2, h3, h4, h5, p {
 
 .Container {
     padding-top: 56px;
+}
+
+.floatingWrapper {
+    position: fixed;
+    z-index: 11;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: none;
+    background: rgba(0,0,0,.65);
+}
+
+.DefaultButton {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    font-size: 14px;
+    background: #61dafb;
+    cursor: pointer;
+}
+
+.NonDefaultButton {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    font-size: 14px;
+    background: #f0eff5;
+    cursor: pointer;
 }

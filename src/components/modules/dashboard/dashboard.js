@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../../css/dashboard.css';
+import '../../../css/dashboard.css';
 import Column from './column';
 import {columnsData2, columnsData} from './columnsData';
 import $ from 'jquery';
