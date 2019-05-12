@@ -40,7 +40,7 @@ const userRouting = (
             <Route exact path="/profile/:username/gallery" component={Gallery}/>
             <Route exact path="/profile/:username/friends" component={Friends}/>
             <Route exact path="/profile/:username/groups" component={ProfileGroups}/>
-            {/*<Route path='/404' component={Notfound} />*/}
+            <Route path='/404' component={Notfound} />
             {/*<Redirect from='*' to='/404' />*/}
         </UserLayout>
     </Router>

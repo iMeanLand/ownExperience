@@ -37,8 +37,8 @@ class Auth {
         cookies.removeCookie('token_a');
         cookies.removeCookie('token');
 
-        // window.location.href = '/';
-        this.props.history.push('/');
+        window.location.href = '/';
+        // this.props.history.push('/');
 
     }
 
