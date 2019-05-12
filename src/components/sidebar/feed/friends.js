@@ -12,7 +12,7 @@ function Friends() {
             <div className="FriendsContent">
                 {Object.keys(postsData).map(function(key) {
                     {value = postsData[key]}
-                return <div className="FriendBlock">
+                return <div key={key} className="FriendBlock">
                             <Link to={'/profile/' + key}>
                                 <div className="FriendsAvatar"
                                      style={{backgroundImage: 'url("' + process.env.PUBLIC_URL + '/uploads/' + value.avatar + '")'}}></div>

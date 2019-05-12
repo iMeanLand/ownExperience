@@ -11,11 +11,11 @@ function FriendsActivity() {
                 Friends Activity
             </div>
             <div className="FriendsActivityContent">
-                {Object.keys(postsData).map((k, i) => {
-                    value = postsData[k];
+                {Object.keys(postsData).map((key, i) => {
+                    value = postsData[key];
                     return (
-                        <div className="FriendsActivityBlock">
-                            <Link to={'/profile/' + k}>
+                        <div key={key} className="FriendsActivityBlock">
+                            <Link to={'/profile/' + key}>
                                 <div className="FriendsActivityAvatar"
                                      style={{backgroundImage: 'url("' + process.env.PUBLIC_URL + '/uploads/' + value.avatar + '")'}}></div>
                             </Link>

@@ -20,7 +20,7 @@ function Friends(props) {
                             {Object.keys(postsData).map(function(key) {
                                 {value = postsData[key]}
                                 return (
-                                <div className="ThreeColumn mgBottom text-center">
+                                <div key={key} className="ThreeColumn mgBottom text-center">
                                     <div className="FriendBlock">
                                         <Link to={'/profile/' + key}>
                                             <div className="FriendsAvatar"

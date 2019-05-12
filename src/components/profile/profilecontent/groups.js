@@ -8,7 +8,7 @@ function Groups(props) {
     const currentProfile = props.match.params.username;
     const Groups = GroupsData.map((value) => (
 
-        <div className="OneColumn">
+        <div key={value.name} className="OneColumn">
             <div className="ProfileGroupBlock">
                 <div className="ProfileGroupAvatar" style={{backgroundImage: 'url('+ process.env.PUBLIC_URL + '/uploads/' + value.image +')'}}>
                 </div>
@@ -20,7 +20,7 @@ function Groups(props) {
                         {value.description}
                      </span>
                     <span className={value.status + ' ProfileGroupStatus'}>
-                        {value.status === 'Public' ? <i class="fas fa-unlock"></i> : <i class="fas fa-lock"></i>}
+                        {value.status === 'Public' ? <i className="fas fa-unlock"></i> : <i className="fas fa-lock"></i>}
                     </span>
                 </div>
             </div>

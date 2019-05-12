@@ -12,7 +12,7 @@ function TextPost(props) {
     return (
         <div className="FeedPost TextPost">
             <div className="FeedPostHeader">
-                <Link exact to={'/profile/' + username}>
+                <Link to={'/profile/' + username}>
                     <span className="byUser">
                         <div className="byUserAvatar" style={{backgroundImage: 'url('+ avatar +')'}}>
                         </div>
