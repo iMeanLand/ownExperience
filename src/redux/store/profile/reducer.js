@@ -12,8 +12,9 @@ const profileReducer = (state = initialState, action) => {
             return {...action.payload};
         case 'SET_PROFILE_AVATAR':
             return {...state, avatar: action.payload};
+        default:
+            return state;
     }
-    return state;
 };
 
 export default profileReducer;

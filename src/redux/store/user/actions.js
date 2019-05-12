@@ -16,7 +16,6 @@ let userData = {
 
 // Current logged in user data
 function setUserData() {
-    console.log(userData);
     return {
         type: 'GET_USER_DATA',
         payload: userData

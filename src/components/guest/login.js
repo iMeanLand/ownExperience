@@ -1,21 +1,17 @@
 import React from 'react';
 import '../../css/main.css';
 import '../../css/welcome.css';
-import $ from 'jquery';
+// import $ from 'jquery';
 import cookies from "../../cookies";
 import token from '../../token';
 
 class Login extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
 
 
-        let username = $('#UsernameInput').val();
+        // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
         cookies.setCookie('token', token, 30);

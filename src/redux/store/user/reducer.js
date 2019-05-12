@@ -20,8 +20,9 @@ const userReducer = (state = initialState, action) => {
             };
         case 'GET_USER_DATA':
             return {...action.payload};
+        default:
+            return state;
     }
-    return state;
 };
 
 export default userReducer;

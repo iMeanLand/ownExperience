@@ -15,14 +15,9 @@ const mapDispatchToComponent = {
 };
 
 class AddPost extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         this.currentProfile = this.context.currentProfile;
-        console.log('Username: ' + this.props.user.username);
-        console.log('CurrentProfile: ' + this.currentProfile);
         if (this.props.user.username !== this.currentProfile) return null;
 
         return (

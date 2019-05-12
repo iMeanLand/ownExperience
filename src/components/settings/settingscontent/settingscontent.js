@@ -36,7 +36,6 @@ class SettingsContent extends React.Component {
         };
 
         if (this.props.changeUserSettings(userData)) {
-            console.log('success');
             AlertSuccess.displayAlert('Settings', 'Your changes have been saved');
         } else {
             AlertFailed.displayAlert('Settings', 'Failed to save your settings, try again later');
