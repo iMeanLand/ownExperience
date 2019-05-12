@@ -6,8 +6,8 @@ import {createStore} from "redux";
 import {globalReducer} from './redux/store/globalreducer';
 import {Provider} from 'react-redux';
 
-
 const store = createStore(globalReducer);
+
 ReactDOM.render(
     <Provider store={store}>
         {routing}

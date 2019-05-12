@@ -5,6 +5,7 @@ import {Link, NavLink} from 'react-router-dom';
 import cookies from "../../cookies";
 import {setMiscAvatar, setUserData} from '../../redux/store/user/actions';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 function mappingData(state) {
     return {
@@ -30,6 +31,22 @@ class Header extends React.Component {
 
     componentDidMount() {
         this.props.setUserData();
+    }
+
+    preaload() {
+        window.onload = function () {
+            let preloader = document.getElementById('loadingBar');
+            preloader.style.width = '100%';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 500)
+        }
+    }
+
+    componentWillMount() {
+        // this.props.history.listen((location, action) => {
+        //     this.preaload();
+        // });
     }
 
     displayFriendsNotificationsList() {
@@ -66,6 +83,7 @@ class Header extends React.Component {
     }
 
     HeaderDOM() {
+        console.log(this.props);
         let name = this.props.user.username;
 
         if (this.props.user.first_name !== null && this.props.user.last_name !== null) {

@@ -24,9 +24,9 @@ global.token = cookies.getCookie('token');
 
 const routing = (
     <Router>
-        <Header />
+        <Header/>
         <Switch>
-            <Route exact path="/" component={ (!global.token) ? Login : Feed }/>
+            <Route exact path="/" component={(!global.token) ? Login : Feed}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>
@@ -41,7 +41,7 @@ const routing = (
             <Route exact path="/profile/:username/groups" component={ProfileGroups}/>
             <Route component={Notfound}/>
         </Switch>
-        <Footer />
+        <Footer/>
     </Router>
 );
 

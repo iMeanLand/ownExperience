@@ -216,16 +216,16 @@ h1, h2, h3, h4, h5, p {
     font-size: 16px;
 }
 
-.loadingBar {
+#loadingBar {
     position: fixed;
     z-index: 2147483647;
     top: 55px;
-    left: -6px;
-    width: 100%;
+    left: 0;
+    width: 0;
     height: 2px;
     background: #61dafb;
     border-radius: 1px;
-    transition: width 500ms ease-out,opacity 400ms linear;
+    transition: width 500ms ease-out,opacity 500ms linear;
 }
 
 .Container {
