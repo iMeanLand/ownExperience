@@ -2,7 +2,6 @@ import React from 'react';
 import '../../../css/header.css'
 import logo from '../../../logo.png';
 import {Link, NavLink} from 'react-router-dom';
-import cookies from "../../../helpers/cookies";
 import {setMiscAvatar, setUserData} from '../../../redux/store/user/actions';
 import {connect} from 'react-redux';
 import Auth from "../../../helpers/Auth";

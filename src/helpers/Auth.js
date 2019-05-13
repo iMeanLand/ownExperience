@@ -22,7 +22,7 @@ class Auth {
     }
 
     static checkIfAdminAuthenticated() {
-        if (cookies.getCookie('token_a')) {
+        if (cookies.getCookie('tokenA')) {
             return true;
         }
     }
@@ -34,11 +34,13 @@ class Auth {
     }
 
     static logOut() {
-        cookies.removeCookie('token_a');
-        cookies.removeCookie('token');
-
-        window.location.href = '/';
-        // this.props.history.push('/');
+        if (Auth.isAuthenticated) {
+            cookies.removeCookie('token');
+            window.location.href = '/';
+        } else if (Auth.isAdminAuthenticated) {
+            cookies.removeCookie('tokenA');
+            window.location.href = '/admin';
+        }
 
     }
 

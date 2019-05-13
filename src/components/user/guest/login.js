@@ -7,6 +7,10 @@ import Auth from "../../../helpers/Auth";
 
 class Login extends React.Component {
 
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     componentWillMount() {
         Auth.redirectIfIsAuthenticated();
     }

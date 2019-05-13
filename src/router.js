@@ -23,13 +23,13 @@ import Settings from "./components/user/settings/settings";
 import Auth from './helpers/Auth';
 import UserLayout from "./components/user/ui/layout";
 import AdminLayout from "./components/admin/ui/layout";
-
+console.log(Auth.isAuthenticated);
 const userRouting = (
     <Router>
         <UserLayout>
-            <Route exact path="/" component={(!Auth.isAuthenticated) ? Login : Feed}/>
-            <Route path="/register" component={(!Auth.isAuthenticated) ? Feed : Register}/>
-            <Route path="/login" component={(!Auth.isAuthenticated) ? Feed : Login}/>
+            <Route exact path="/" component={(!Auth.isAuthenticated) ? Login : Feed }/>
+            <Route exact path="/register" component={(!Auth.isAuthenticated) ? Feed : Register }/>
+            <Route exact path="/login" component={(!Auth.isAuthenticated) ? Feed : Login }/>
             <Route path="/kanban" component={Kanban}/>
             <Route path="/groups" component={Groups}/>
             <Route path="/pages" component={Pages}/>

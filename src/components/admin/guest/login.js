@@ -17,7 +17,7 @@ class AdminLogin extends React.Component {
         // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
-        cookies.setCookie('token_a', token, 30);
+        cookies.setCookie('tokenA', token, 30);
         window.location.href = '/admin/dashboard';
     };
 
