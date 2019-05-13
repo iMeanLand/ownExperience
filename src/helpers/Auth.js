@@ -24,10 +24,10 @@ class Auth {
     static logOut() {
         if (Auth.isAuthenticated) {
             cookies.removeCookie('token');
-            window.location.href = '/';
+            window.location.href = '/login';
         } else if (Auth.isAdminAuthenticated) {
             cookies.removeCookie('tokenA');
-            window.location.href = '/admin';
+            window.location.href = '/login';
         }
 
     }

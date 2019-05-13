@@ -30,6 +30,10 @@ const onlyForAdmins = [
     '/admin/settings'
 ];
 
+const onlyForUsers = [
+    '/'
+];
+
 const onlyForGuests = [
     '/login',
     '/register'
@@ -38,20 +42,20 @@ const onlyForGuests = [
 const userRouting = (
     <Router>
         <UserLayout>
-            {/*<Route exact path="/" render={() => (*/}
-                {/*Auth.isAuthenticated ? (*/}
-                    {/*<Redirect to="/"/>*/}
-                {/*) : (*/}
-                    {/*<Redirect to="/login"/>*/}
-                {/*)*/}
-            {/*)}/>*/}
-            {/*<Route exact path={onlyForGuests} render={() => (*/}
-                {/*Auth.isAuthenticated ? (*/}
-                    {/*<Redirect to="/"/>*/}
-                {/*) : (*/}
-                    {/*<Redirect to="/login"/>*/}
-                {/*)*/}
-            {/*)}/>*/}
+            <Route exact path={onlyForUsers} render={() => (
+                Auth.isAuthenticated ? (
+                    null
+                ) : (
+                    <Redirect to="/login"/>
+                )
+            )}/>
+            <Route exact path={onlyForGuests} render={() => (
+                Auth.isAuthenticated ? (
+                    <Redirect to="/"/>
+                ) : (
+                    null
+                )
+            )}/>
             <Route exact path="/" component={Feed}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>

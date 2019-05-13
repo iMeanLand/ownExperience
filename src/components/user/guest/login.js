@@ -51,22 +51,6 @@ class Login extends React.Component {
                                        required/>
                                 <input type="password" placeholder="Parola" id="PasswordInput" className="Two TypeInput"
                                        required/>
-                                <input type="email" placeholder="Email" id="EmailInput" className="Three TypeInput"
-                                       required/>
-                                <input type="text" placeholder="Captcha" id="CatpchaInput" className="Four TypeInput"
-                                       required/>
-                                <label>
-                                    <input type="checkbox" />
-                                    Am citit si sunt de acord cu Termeni de Utilizare, Politică de confidențialitate, Politica Cookie
-                                </label>
-                                <br/>
-                                <br/>
-                                <label>
-                                    <input type="checkbox" />
-                                    Am peste 16 ani
-                                </label>
-                                <br/>
-                                <br/>
                                 <input className="WelcomePageFormSubmit" type="submit" value="Autentificare"/>
                             </form>
                         </div>

@@ -123,6 +123,10 @@
     margin-right: 10px;
 }
 
+.FeedAddPostButton i {
+    padding-top: 2px;
+}
+
 .FeedAddPostButton::before {
     content: '';
     background-color: #61dafb;

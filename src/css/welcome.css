@@ -16,7 +16,7 @@ body {
 
 .WelcomeLogo {
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
 }
 
 .WelcomePageMainImage {
@@ -58,6 +58,10 @@ body {
     color: #333333;
     text-transform: uppercase;
     margin-right: 40px;
+}
+
+.ChangeFormLink:last-child {
+    margin-right: 0;
 }
 
 .ChangeFormLink.active {
@@ -121,6 +125,14 @@ body {
     background-image: url("../imgs/lock.png");
 }
 
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: none !important;
+}
+
 .TypeInput:focus .TypeInput::placeholder {
     margin-top: -10px;
 }
@@ -156,7 +168,7 @@ body {
 }
 
 .WelcomeFooter {
-    margin-top: 78px;
+    margin-top: 50px;
 }
 
 .WelcomeFooter img {
@@ -198,4 +210,14 @@ body {
     /* identical to box height */
     color: #9F9F9F;
     margin-right: 20px;
+}
+
+.FormCheckboxes {
+    padding: 20px 20px 30px 20px;
+}
+
+.FormCheckboxes input {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
 }
