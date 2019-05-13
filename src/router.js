@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, BrowserRouter as Router, Redirect} from 'react-router-dom'
+import {Route, BrowserRouter as Router, Redirect, Switch} from 'react-router-dom'
 
 import AdminLogin from './components/admin/guest/login';
 import AdminDashboard from './components/admin/dashboard/dashboard';
@@ -23,13 +23,38 @@ import Settings from "./components/user/settings/settings";
 import Auth from './helpers/Auth';
 import UserLayout from "./components/user/ui/layout";
 import AdminLayout from "./components/admin/ui/layout";
-console.log(Auth.isAuthenticated);
+
+const onlyForAdmins = [
+    '/admin',
+    '/admin/dashboard',
+    '/admin/settings'
+];
+
+const onlyForGuests = [
+    '/login',
+    '/register'
+];
+
 const userRouting = (
     <Router>
         <UserLayout>
-            <Route exact path="/" component={(!Auth.isAuthenticated) ? Login : Feed }/>
-            <Route exact path="/register" component={(!Auth.isAuthenticated) ? Feed : Register }/>
-            <Route exact path="/login" component={(!Auth.isAuthenticated) ? Feed : Login }/>
+            {/*<Route exact path="/" render={() => (*/}
+                {/*Auth.isAuthenticated ? (*/}
+                    {/*<Redirect to="/"/>*/}
+                {/*) : (*/}
+                    {/*<Redirect to="/login"/>*/}
+                {/*)*/}
+            {/*)}/>*/}
+            {/*<Route exact path={onlyForGuests} render={() => (*/}
+                {/*Auth.isAuthenticated ? (*/}
+                    {/*<Redirect to="/"/>*/}
+                {/*) : (*/}
+                    {/*<Redirect to="/login"/>*/}
+                {/*)*/}
+            {/*)}/>*/}
+            <Route exact path="/" component={Feed}/>
+            <Route exact path="/register" component={Register}/>
+            <Route exact path="/login" component={Login}/>
             <Route path="/kanban" component={Kanban}/>
             <Route path="/groups" component={Groups}/>
             <Route path="/pages" component={Pages}/>
@@ -43,13 +68,14 @@ const userRouting = (
             <Route path='/404' component={Notfound} />
             {/*<Redirect from='*' to='/404' />*/}
         </UserLayout>
-    </Router>
-);
-
-const adminRouting = (
-    <Router>
         <AdminLayout>
-            <Route exact path="/admin" component={(!Auth.isAdminAuthenticated) ? AdminLogin : AdminDashboard}/>
+            <Route exact path={onlyForAdmins} render={() => (
+                !Auth.isAdminAuthenticated ? (
+                    <Redirect to="/login"/>
+                ) : (
+                    <Redirect to="/admin/dashboard"/>
+                )
+            )}/>
             <Route exact path="/admin/dashboard" component={AdminDashboard}/>
             <Route path="/admin/settings" component={AdminSettings}/>
         </AdminLayout>
@@ -57,8 +83,7 @@ const adminRouting = (
 );
 
 const routes = [
-    userRouting,
-    adminRouting
+    userRouting
 ];
 
 export {

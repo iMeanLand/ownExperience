@@ -1,13 +1,8 @@
 import React from 'react';
 import Sidebar from '../sidebar/settings/sidebar';
 import SettingsContent from './settingscontent/settingscontent';
-import Auth from "../../../helpers/Auth";
 
 class AdminSettings extends React.Component {
-
-    componentWillMount() {
-        Auth.redirectIfNotAdminAuthenticated();
-    }
 
     render() {
 

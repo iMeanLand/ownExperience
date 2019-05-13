@@ -1,0 +1,201 @@
+body {
+    background: #fff;
+}
+
+.WelcomePage {
+    width: 100%;
+    /*background: #FFF;*/
+}
+
+.WelcomePageContent {
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.WelcomeLogo {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.WelcomePageMainImage {
+    text-align: right;
+}
+
+.WelcomeHeading {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 34px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.WelcomeHeading h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 45px;
+    line-height: 54px;
+    color: #333333;
+}
+
+.WelcomeHeading p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    color: rgba(102, 102, 102, 0.9);
+}
+
+.ChangeFormLink {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    text-align: center;
+    color: #333333;
+    text-transform: uppercase;
+    margin-right: 40px;
+}
+
+.ChangeFormLink.active {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    text-align: center;
+    color: #52A7ED;
+}
+
+.WelcomePageForm {
+    text-align: left;
+    width: 356px;
+    margin-left: 80px;
+}
+
+.FormLinks {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#LoginForm, #RegisterForm {
+    width: 100%;
+}
+
+.TypeInput {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #52A7ED;
+    padding: 14px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: 93% 50%;
+}
+
+.TypeInput.One {
+    background-image: url("../imgs/user.png");
+}
+
+.TypeInput.Two {
+    background-image: url("../imgs/lock.png");
+}
+
+.TypeInput.Three {
+    background-image: url("../imgs/mail.png");
+}
+
+.TypeInput.Four {
+    background-image: url("../imgs/lock.png");
+}
+
+.TypeInput:focus .TypeInput::placeholder {
+    margin-top: -10px;
+}
+
+.TypeInput:focus, .TypeInput:valid {
+    border: 1px solid #52A7ED;
+    outline: none;
+}
+
+.TypeInput::placeholder {
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #9F9F9F;
+}
+
+.WelcomePageFormSubmit {
+    background: #52A7ED;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+    border: none;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.WelcomeFooter {
+    margin-top: 78px;
+}
+
+.WelcomeFooter img {
+    width: 10%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.WelcomePageFormSubmit:hover {
+    background: #458cc5;
+}
+
+.WelcomeBottomFooter {
+    text-align: center;
+    margin-top: 55px;
+    margin-bottom: 20px;
+}
+
+.WelcomeBottomFooter > .Row {
+    text-align: center;
+}
+
+.WelcomeFooter .ThreeColumn {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #666666;
+    padding: 0 15px;
+}
+
+.WelcomeBottomFooter .BottomFooterBlock {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #9F9F9F;
+    margin-right: 20px;
+}

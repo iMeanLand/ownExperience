@@ -8,10 +8,6 @@ class AdminDashboard extends React.Component {
         super(props);
     }
 
-    componentWillMount() {
-        Auth.redirectIfNotAdminAuthenticated();
-    }
-
     render() {
         return (
             <div className="Container">

@@ -5,6 +5,7 @@ import {setProfileUserData, setProfileAvatar} from '../../../../redux/store/prof
 import {connect} from 'react-redux';
 import AlertSuccess from '../../../modules/alerts/alertsuccess';
 import GalleryPopup from './gallerypopup';
+import ProfileAvatar from './profileavatar';
 
 function mappingData(state) {
     return {
@@ -26,18 +27,15 @@ class ProfileHeader extends React.Component {
 
         this.handleUploadAvatar = this.handleUploadAvatar.bind(this);
         this.currentProfile = this.props.currentProfile;
+        this.state = { open: false };
+        this.show = dimmer => () => this.setState({ dimmer, open: true });
+        this.close = () => this.setState({ open: false });
     }
 
     componentDidMount() {
         console.log(this.props);
         // Get current profile name
         this.props.setProfileUserData(this.currentProfile);
-    }
-
-    handleGalleryPopupClick() {
-        let gallery = document.getElementById('galleryPopup');
-        gallery.style.top = '0';
-        document.getElementsByClassName('floatingWrapper')[0].style.display = 'block';
     }
 
     handleUploadAvatar(avatar) {
@@ -47,12 +45,14 @@ class ProfileHeader extends React.Component {
         AlertSuccess.displayAlert('Avatar', 'Avatar uploaded successfully');
     }
 
+
+
     render() {
         let uploadAvatar = null;
 
         if (this.props.profile.username === this.currentProfile) {
             uploadAvatar = (
-                <div className="ProfileUploadAvatar" onClick={this.handleGalleryPopupClick}>
+                <div className="ProfileUploadAvatar" onClick={this.show(true)}>
                     <i className="fas fa-upload"></i>
                 </div>
             );
@@ -63,13 +63,17 @@ class ProfileHeader extends React.Component {
             name = this.props.profile.first_name + ' ' + this.props.profile.last_name;
         }
 
+        const profileAvatar = (
+            <div className="ProfileAvatar"
+                 style={{backgroundImage: 'url(/uploads/' + this.props.profile.avatar + ')'}}>
+                {uploadAvatar}
+            </div>
+        );
+
         return (
             <div className="ProfileCover"
                  style={{backgroundImage: 'url(/uploads/cover.jpg)'}}>
-                <div className="ProfileAvatar"
-                     style={{backgroundImage: 'url(/uploads/' + this.props.profile.avatar + ')'}}>
-                    {uploadAvatar}
-                </div>
+                    {profileAvatar}
                 <div className="ProfileName">
                     {name}
                 </div>
@@ -102,7 +106,8 @@ class ProfileHeader extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <GalleryPopup handleUploadAvatar={this.handleUploadAvatar} />
+                <GalleryPopup open={this.state.open} close={this.close} handleUploadAvatar={this.handleUploadAvatar} />
+                <ProfileAvatar userAvatar={'/uploads/' +this.props.profile.avatar} button={profileAvatar}/>
             </div>
         )
     }

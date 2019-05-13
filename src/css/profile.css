@@ -234,3 +234,13 @@
     width: 100%;
     text-align: right;
 }
+
+.profileAvatarPopup {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profileAvatarPopup img {
+    margin: 0 auto;
+    text-align: center;
+}

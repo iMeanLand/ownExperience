@@ -7,10 +7,6 @@ import Auth from "../../../helpers/Auth";
 
 class AdminLogin extends React.Component {
 
-    componentWillMount() {
-        Auth.redirectIfIsAuthenticated();
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
 

@@ -15,21 +15,9 @@ class Auth {
         }
     }
 
-    static redirectIfIsAuthenticated() {
-        if (this.isAuthenticated || this.isAdminAuthenticated) {
-            window.location.href = '/';
-        }
-    }
-
     static checkIfAdminAuthenticated() {
         if (cookies.getCookie('tokenA')) {
             return true;
-        }
-    }
-
-    static redirectIfNotAdminAuthenticated() {
-        if (!this.isAdminAuthenticated) {
-            window.location.href = '/404';
         }
     }
 
