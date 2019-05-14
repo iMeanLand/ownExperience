@@ -25,7 +25,6 @@ import UserLayout from "./components/user/ui/layout";
 import AdminLayout from "./components/admin/ui/layout";
 
 const onlyForAdmins = [
-    '/admin',
     '/admin/dashboard',
     '/admin/settings'
 ];
@@ -36,7 +35,8 @@ const onlyForUsers = [
 
 const onlyForGuests = [
     '/login',
-    '/register'
+    '/register',
+    '/admin'
 ];
 
 const userRouting = (
@@ -59,10 +59,10 @@ const userRouting = (
             <Route exact path="/" component={Feed}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
-            <Route path="/kanban" component={Kanban}/>
-            <Route path="/groups" component={Groups}/>
-            <Route path="/pages" component={Pages}/>
-            <Route path="/settings" component={Settings}/>
+            <Route exact path="/kanban" component={Kanban}/>
+            <Route exact path="/groups" component={Groups}/>
+            <Route exact path="/pages" component={Pages}/>
+            <Route exact path="/settings" component={Settings}/>
             {/*Profile Pages*/}
             <Route exact path="/profile/:username" component={Profile}/>
             <Route exact path="/profile/:username/about" component={About}/>
@@ -77,11 +77,19 @@ const userRouting = (
                 !Auth.isAdminAuthenticated ? (
                     <Redirect to="/login"/>
                 ) : (
-                    <Redirect to="/admin/dashboard"/>
+                    null
                 )
             )}/>
+            <Route exact path={onlyForGuests} render={() => (
+                Auth.isAdminAuthenticated ? (
+                    <Redirect to="/admin/dashboard"/>
+                ) : (
+                    null
+                )
+            )}/>
+            <Route exact path="/admin" component={AdminLogin}/>
             <Route exact path="/admin/dashboard" component={AdminDashboard}/>
-            <Route path="/admin/settings" component={AdminSettings}/>
+            <Route exact path="/admin/settings" component={AdminSettings}/>
         </AdminLayout>
     </Router>
 );

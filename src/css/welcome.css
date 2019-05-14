@@ -221,3 +221,9 @@ input:-webkit-autofill:active  {
     margin-right: 10px;
     vertical-align: middle;
 }
+
+.WelcomePageForm.Admin {
+    text-align: center;
+    width: 356px;
+    margin: 0 auto;
+}

@@ -1,4 +1,4 @@
-import cookies from "./cookies";
+import cookie from "react-cookies";
 import PropTypes from 'prop-types';
 
 class Auth {
@@ -10,23 +10,23 @@ class Auth {
     };
 
     static checkIfAuthenticated() {
-        if (cookies.getCookie('token')) {
+        if (cookie.load('token')) {
             return true;
         }
     }
 
     static checkIfAdminAuthenticated() {
-        if (cookies.getCookie('tokenA')) {
+        if (cookie.load('token_a')) {
             return true;
         }
     }
 
     static logOut() {
         if (Auth.isAuthenticated) {
-            cookies.removeCookie('token');
+            cookie.remove('token');
             window.location.href = '/login';
         } else if (Auth.isAdminAuthenticated) {
-            cookies.removeCookie('tokenA');
+            cookie.remove('token_a');
             window.location.href = '/login';
         }
 

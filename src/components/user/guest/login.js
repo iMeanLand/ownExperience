@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../../css/main.css';
 import '../../../css/welcome.css';
-import cookies from "../../../helpers/cookies";
 import token from '../../../helpers/token';
 import {NavLink} from "react-router-dom";
+import cookie from "react-cookies";
 
 class Login extends React.Component {
 
@@ -17,8 +17,7 @@ class Login extends React.Component {
         // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
-        cookies.setCookie('token', token, 30);
-
+        cookie.save('token', token, 30);
         this.props.history.go('/');
     };
 

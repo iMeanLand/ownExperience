@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../../css/main.css';
 import '../../../css/welcome.css';
-import cookies from "../../../helpers/cookies";
+import cookie from "react-cookies";
 import token from "../../../helpers/token";
-import Auth from "../../../helpers/Auth";
+import {NavLink} from "react-router-dom";
 
 class AdminLogin extends React.Component {
 
@@ -13,20 +13,40 @@ class AdminLogin extends React.Component {
         // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
-        cookies.setCookie('tokenA', token, 30);
+        cookie.save('token_a', token, 30);
         window.location.href = '/admin/dashboard';
     };
 
     render() {
         return (
-            <div className="AdminLoginPage">
-                <div className="AdminLoginPageContent">
-                    <h1>Admin login Page</h1>
-                    <form id="LoginForm" onSubmit={(e) => this.handleSubmit(e)}>
-                        <input type="text" placeholder="Username" id="UsernameInput" className="TypeInput" required />
-                        <input type="password" placeholder="Password" id="PasswordInput" className="TypeInput" required />
-                        <input type="submit"/>
-                    </form>
+            <div className="WelcomePage">
+                <div className="WelcomePageContent">
+                    <div className="WelcomeLogo">
+                        <img src="/uploads/univers_logo.png" alt=""/>
+                        <div className="WelcomeHeading">
+                            <h1>Bun venit</h1>
+                            <p>în rețeaua noastră de socializare</p>
+                        </div>
+                    </div>
+                    <div className="Row">
+
+                        <div className="OneColumn WelcomePageForm Admin">
+                            <form id="LoginForm" onSubmit={(e) => this.handleSubmit(e)}>
+                                <div className="FormLinks">
+                                    <NavLink activeClassName="active" className="ChangeFormLink" to="/admin">
+                                        Logare
+                                    </NavLink>
+                                </div>
+                                <input type="text" placeholder="Utilizator" id="UsernameInput" className="One TypeInput"
+                                       required/>
+                                <input type="password" placeholder="Parola" id="PasswordInput" className="Two TypeInput"
+                                       required/>
+                                <input className="WelcomePageFormSubmit" type="submit" value="Autentificare"/>
+                            </form>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         )
