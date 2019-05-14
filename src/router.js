@@ -23,6 +23,9 @@ import Settings from "./components/user/settings/settings";
 import Auth from './helpers/Auth';
 import UserLayout from "./components/user/ui/layout";
 import AdminLayout from "./components/admin/ui/layout";
+import Advertisement from './components/user/advertisements/advertisements';
+import Info from "./components/user/advertisements/content/info";
+import Publish from "./components/user/advertisements/content/publish";
 
 const onlyForAdmins = [
     '/admin/dashboard',
@@ -30,7 +33,10 @@ const onlyForAdmins = [
 ];
 
 const onlyForUsers = [
-    '/'
+    '/',
+    '/advertisements',
+    '/advertisements/info',
+    '/advertisements/publish',
 ];
 
 const onlyForGuests = [
@@ -56,19 +62,22 @@ const userRouting = (
                     null
                 )
             )}/>
-            <Route exact path="/" component={Feed}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/kanban" component={Kanban}/>
             <Route exact path="/groups" component={Groups}/>
             <Route exact path="/pages" component={Pages}/>
             <Route exact path="/settings" component={Settings}/>
+            <Route exact path="/advertisements/info" component={Info}/>
+            <Route exact path="/advertisements/publish" component={Publish}/>
+            <Route exact path="/advertisements" component={Advertisement}/>
             {/*Profile Pages*/}
             <Route exact path="/profile/:username" component={Profile}/>
             <Route exact path="/profile/:username/about" component={About}/>
             <Route exact path="/profile/:username/gallery" component={Gallery}/>
             <Route exact path="/profile/:username/friends" component={Friends}/>
             <Route exact path="/profile/:username/groups" component={ProfileGroups}/>
+            <Route exact path="/" component={Feed}/>
             <Route path='/404' component={Notfound} />
             {/*<Redirect from='*' to='/404' />*/}
         </UserLayout>
@@ -87,9 +96,9 @@ const userRouting = (
                     null
                 )
             )}/>
-            <Route exact path="/admin" component={AdminLogin}/>
             <Route exact path="/admin/dashboard" component={AdminDashboard}/>
             <Route exact path="/admin/settings" component={AdminSettings}/>
+            <Route exact path="/admin" component={AdminLogin}/>
         </AdminLayout>
     </Router>
 );

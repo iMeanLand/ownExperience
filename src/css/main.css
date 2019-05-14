@@ -7,6 +7,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-position: center top -250px !important;
+    background-image: url('../imgs/univers_bg.jpg') !important;
     background-attachment: fixed;
     background-size: 100% auto;
 }

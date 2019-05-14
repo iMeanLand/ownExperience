@@ -1,9 +1,8 @@
 import React from 'react';
 import '../../../css/main.css';
 import '../../../css/welcome.css';
-import cookie from "react-cookies";
-import token from "../../../helpers/token";
 import {NavLink} from "react-router-dom";
+import Auth from "../../../helpers/Auth";
 
 class AdminLogin extends React.Component {
 
@@ -13,7 +12,7 @@ class AdminLogin extends React.Component {
         // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
-        cookie.save('token_a', token, 30);
+        Auth.login_admin();
         window.location.href = '/admin/dashboard';
     };
 

@@ -5,6 +5,7 @@ import cookie from "react-cookies";
 // import $ from 'jquery';
 import token from '../../../helpers/token';
 import {NavLink} from "react-router-dom";
+import Auth from "../../../helpers/Auth";
 
 class Register extends React.Component {
 
@@ -20,7 +21,7 @@ class Register extends React.Component {
         // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
-        cookie.save('token', token, 30);
+        Auth.register();
         this.props.history.go('/');
 
     }

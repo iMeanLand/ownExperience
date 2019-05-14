@@ -142,6 +142,10 @@ class Header extends React.Component {
                                         </li>
                                         <li>
                                             <NavLink activeClassName='active' className="DropDownMenuBtn"
+                                                     to="/advertisements">Advertisements</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink activeClassName='active' className="DropDownMenuBtn"
                                                      to="/kanban">Kanban</NavLink>
                                         </li>
                                         <li>

@@ -1,9 +1,8 @@
 import React from 'react';
 import '../../../css/main.css';
 import '../../../css/welcome.css';
-import token from '../../../helpers/token';
 import {NavLink} from "react-router-dom";
-import cookie from "react-cookies";
+import Auth from '../../../helpers/Auth';
 
 class Login extends React.Component {
 
@@ -17,8 +16,9 @@ class Login extends React.Component {
         // let username = $('#UsernameInput').val();
         // let password = $('#PasswordInput').val();
 
-        cookie.save('token', token, 30);
+        Auth.login();
         this.props.history.go('/');
+        // Auth.logOut(this.props);
     };
 
     render() {

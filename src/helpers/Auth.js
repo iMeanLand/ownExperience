@@ -1,5 +1,6 @@
 import cookie from "react-cookies";
 import PropTypes from 'prop-types';
+import token from "./token";
 
 class Auth {
 
@@ -29,7 +30,18 @@ class Auth {
             cookie.remove('token_a');
             window.location.href = '/login';
         }
+    }
 
+    static login() {
+        cookie.save('token', token, 1);
+    }
+
+    static login_admin() {
+        cookie.save('token_a', token, 1);
+    }
+
+    static register() {
+        cookie.save('token', token, 1);
     }
 
 }
