@@ -1,24 +1,25 @@
 const initialState = {
-    // username: {
-    //     avatar: '',
-    //     first_name: '',
-    //     type: '',
-    //     last_name: '',
-    //     token: '',
-    //     by: '',
-    //     content: ''
-    // }
+    postType: '',
+    feedPosts: {}
 };
 
 const feedReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_FEED_DATA':
-            return {...action.payload};
+            return {
+                ...state,
+                feedPosts: action.payload
+            };
         case 'ADD_NEW_POST':
             return {
                 ...state,
-                ...action.payload
+                feedPosts: {...state.feedPosts , ...action.payload}
             };
+        case 'CHANGE_POST_TYPE':
+            return {
+                ...state,
+                postType: action.payload
+            }
         default:
             return state;
     }

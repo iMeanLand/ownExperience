@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 
 function mappingData(state) {
     return {
-        feed: state.feedReducer
+        feed: state.feedReducer.feedPosts
     };
 }
 

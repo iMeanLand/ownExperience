@@ -9,21 +9,21 @@ import UploadLink from './postactions/uploadlink';
 import UploadSmile from './postactions/uploadsmile';
 import $ from 'jquery';
 
-import text from '../../feed/feedcontent/posts/text';
-import image from '../../feed/feedcontent/posts/image';
-import {addFeedPost} from '../../../../redux/store/feed/actions';
+import {addFeedPost, changeFeedPostType} from '../../../../redux/store/feed/actions';
 
 
 function mappingData(state) {
     return {
-        user: state.userReducer
+        user: state.userReducer,
+        postType: state.feedReducer.postType
     };
 }
 
 const mapDispatchToComponent = {
     setMiscAvatar,
     setUserData,
-    addFeedPost
+    addFeedPost,
+    changeFeedPostType
 };
 
 class AddPost extends React.Component {
@@ -32,6 +32,7 @@ class AddPost extends React.Component {
         super(props);
 
         this.addPost = this.addPost.bind(this);
+        console.log(this.props.postType);
     }
 
     generateNewID() {
@@ -46,7 +47,6 @@ class AddPost extends React.Component {
         const by = this.props.user.username;
         const content = $('.FeedAddPostInput').val();
         const avatar = this.props.user.avatar;
-
 
         let post_id = this.generateNewID();
 
@@ -63,20 +63,6 @@ class AddPost extends React.Component {
 
 
         this.props.addFeedPost(post);
-        // const postTypes = {
-        //     text: text,
-        //     image: image,
-        // };
-
-        // let component = postTypes[postType];
-        // let readyComponent = React.createElement(component, {
-        //     by: this.props.user.username,
-        //     content: $('.FeedAddPostInput').val(),
-        //     avatar: this.props.user.avatar,
-        //     username: this.props.user.username,
-        //     key: this.props.user.username
-        // });
-
     }
 
     render() {
@@ -89,8 +75,10 @@ class AddPost extends React.Component {
         $('.AddPostAction').on('click', function (e) {
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active');
+                console.log('no class');
                 $('.SelectedPostType').attr('data-selected-type', 'text');
-            } else if (!$(this).hasClass('active')) {
+            } else {
+                console.log('add class');
                 $('.AddPostAction').removeClass('active');
                 $(this).addClass('active');
                 $('.SelectedPostType').attr('data-selected-type', $(e.currentTarget).data('type'));
@@ -111,6 +99,7 @@ class AddPost extends React.Component {
                     <textarea className="FeedAddPostInput" placeholder="Post something in your time line">
                     </textarea>
                     <div data-selected-type="text" className="SelectedPostType">
+                        {this.props.postType}
                     </div>
                 </div>
                 <div className="FeedPostActions UserAction">

@@ -15,9 +15,15 @@ function addFeedPost(post_data) {
     };
 }
 
-// function
+function changeFeedPostType(post_type) {
+    return {
+        type: 'CHANGE_POST_TYPE',
+        payload: post_type
+    }
+}
 
 export {
     setFeedData,
-    addFeedPost
+    addFeedPost,
+    changeFeedPostType
 }

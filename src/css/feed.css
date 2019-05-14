@@ -73,9 +73,9 @@
     resize: none;
     width: 100%;
     border: none;
+    margin-bottom: -4px;
     box-sizing: border-box;
     height: 85px;
-    border-bottom: 1px solid #efefef;
 }
 
 
@@ -182,8 +182,15 @@
 
 .SelectedPostType {
     width: 100%;
-    padding: 10px;
+    transition: all 0.3s ease;
+    height: 0;
+}
+
+.SelectedPostType.active {
     border-bottom: 1px solid #efefef;
+    border-top: 1px solid #efefef;
+    height: 46px;
+    padding: 10px;
 }
 
 .AddPostAction.active {
