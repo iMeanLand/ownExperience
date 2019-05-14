@@ -1,6 +1,6 @@
-const postData = {
+const feedData = {
 
-    'mihai': {
+    0: {
         'by': 'Mihai',
         'type': 'text',
         'content': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
@@ -11,7 +11,7 @@ const postData = {
         'last_name': 'Cuculescu',
     },
 
-    'jora.pupkin': {
+    2: {
         'by': 'Alin Tabuci',
         'type': 'text',
         'content': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
@@ -24,7 +24,7 @@ const postData = {
         'last_name': 'pupkin',
     },
 
-    'john.snow': {
+    3: {
         'by': 'John Snow',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',
@@ -34,7 +34,7 @@ const postData = {
         'last_name': 'Snow',
     },
 
-    'andrew.deux': {
+    4: {
         'by': 'Andrew Deux',
         'type': 'text',
         'content': 'It is a long established fact that a reader will' +
@@ -45,7 +45,7 @@ const postData = {
         'last_name': 'Deux',
     },
 
-    'alexander.japonskiy': {
+    5: {
         'by': 'Alexander Japonskiy',
         'type': 'text',
         'content': 'There are many variations of passages of Lorem Ipsum available, ' +
@@ -56,7 +56,7 @@ const postData = {
         'last_name': 'Japonskiy',
     },
 
-    'max.braston': {
+    6: {
         'by': 'Max Braston',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',
@@ -66,7 +66,7 @@ const postData = {
         'last_name': 'Braston',
     },
 
-    'william.jr.dowsen': {
+    7: {
         'by': 'William Jr.Dowsen',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',
@@ -76,7 +76,7 @@ const postData = {
         'last_name': 'Jr.Dowsen',
     },
 
-    'mark.zacksman': {
+    8: {
         'by': 'Mark Zacksman',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',
@@ -88,4 +88,4 @@ const postData = {
 
 };
 
-export default postData;
+export default feedData;

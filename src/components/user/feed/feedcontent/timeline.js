@@ -1,23 +1,39 @@
 import React from 'react';
-import postsData from './posts/postData';
-import TextPost from './posts/TextPost';
+import text from './posts/text';
 import AddPost from '../../actions/posts/addpost';
+import {setFeedData} from '../../../../redux/store/feed/actions';
+import {connect} from 'react-redux';
+
+function mappingData(state) {
+    return {
+        feed: state.feedReducer
+    };
+}
+
+const mapDispatchToComponent = {
+    setFeedData,
+};
 
 const MyComponents = {
-    TextPost: TextPost
+    text: text
 };
 
 class Timeline extends React.Component {
     constructor(props) {
         super(props);
-
         this.styles = props.styles;
+        console.log(this.props.feed);
+    }
+
+    componentDidMount() {
+        this.props.setFeedData();
     }
 
     render() {
         let value = null;
-        const Post = Object.keys(postsData).map(function(key) {
-            value = postsData[key];
+        let thisInstance = this;
+        const Post = Object.keys(this.props.feed).map(function(key) {
+            value = thisInstance.props.feed[key];
             let MyComponent = MyComponents[value.type];
             return React.createElement(MyComponent, {
                 content: value.content,
@@ -31,6 +47,8 @@ class Timeline extends React.Component {
         return (
             <div className="Timeline" style={this.styles}>
                 <AddPost/>
+                <div id="furtherPosts">
+                </div>
                 {Post}
             </div>
         )
@@ -38,4 +56,4 @@ class Timeline extends React.Component {
 
 }
 
-export default Timeline;
+export default connect(mappingData, mapDispatchToComponent)(Timeline);

@@ -2,7 +2,7 @@ import React from 'react';
 import PostActions from '../../../actions/posts/postactions/postactions';
 import {Link} from "react-router-dom";
 
-function TextPost(props) {
+function Image(props) {
 
     let username = props.username;
     let by = props.by;
@@ -21,11 +21,13 @@ function TextPost(props) {
                 </Link>
             </div>
             <div className="FeedPostContent">
-                {content}
+                <div className="FeedPostImage">
+                    <img src={content} alt=""/>
+                </div>
             </div>
             <PostActions/>
         </div>
     )
 }
 
-export default TextPost;
+export default Image;

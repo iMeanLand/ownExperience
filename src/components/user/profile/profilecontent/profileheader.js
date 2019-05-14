@@ -57,7 +57,7 @@ class ProfileHeader extends React.Component {
                 </div>
             );
         }
-        console.log(this.props);
+        // console.log(this.props);
         let name = this.profile;
         if (this.props.profile.first_name !== null && this.props.profile.last_name !== null) {
             name = this.props.profile.first_name + ' ' + this.props.profile.last_name;
