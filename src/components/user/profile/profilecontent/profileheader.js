@@ -65,7 +65,7 @@ class ProfileHeader extends React.Component {
 
         const profileAvatar = (
             <div className="ProfileAvatar"
-                 style={{backgroundImage: 'url(/uploads/' + this.props.profile.avatar + ')'}}>
+                 style={{backgroundImage: 'url('+ this.props.profile.avatar + ')'}}>
                 {uploadAvatar}
             </div>
         );
@@ -107,7 +107,7 @@ class ProfileHeader extends React.Component {
                     </ul>
                 </div>
                 <GalleryPopup open={this.state.open} close={this.close} handleUploadAvatar={this.handleUploadAvatar} />
-                <ProfileAvatar userAvatar={'/uploads/' +this.props.profile.avatar} button={profileAvatar}/>
+                <ProfileAvatar userAvatar={this.props.profile.avatar} button={profileAvatar}/>
             </div>
         )
     }

@@ -1,5 +1,7 @@
 import React from 'react';
 import text from './posts/text';
+import video from './posts/video';
+import image from './posts/image';
 import AddPost from '../../actions/posts/addpost';
 import {setFeedData} from '../../../../redux/store/feed/actions';
 import {connect} from 'react-redux';
@@ -15,7 +17,9 @@ const mapDispatchToComponent = {
 };
 
 const MyComponents = {
-    text: text
+    text: text,
+    image: image,
+    video: video
 };
 
 class Timeline extends React.Component {

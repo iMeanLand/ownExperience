@@ -6,7 +6,7 @@ function changeUserSettings(userData) {
 }
 
 let userData = {
-    avatar: process.env.PUBLIC_URL + '/uploads/thumb.png',
+    avatar: '/uploads/thumb.png',
     username: 'jora.pupkin',
     first_name: 'jora',
     last_name: 'pupkin',
@@ -25,7 +25,7 @@ function setUserData() {
 function setMiscAvatar(avatar) {
     return {
         type: 'SET_MISC_AVATAR',
-        payload: process.env.PUBLIC_URL + '/uploads/' + avatar
+        payload: '/uploads/' + avatar
     }
 }
 

@@ -16,7 +16,6 @@ function addFeedPost(post_data) {
 }
 
 function changeFeedPostType(post_type) {
-    console.log(post_type.active);
     return {
         type: 'CHANGE_POST_TYPE',
         payload: post_type

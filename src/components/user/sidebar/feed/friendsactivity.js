@@ -17,7 +17,7 @@ function FriendsActivity() {
                         <div key={key} className="FriendsActivityBlock">
                             <Link to={'/profile/' + key}>
                                 <div className="FriendsActivityAvatar"
-                                     style={{backgroundImage: 'url("' + process.env.PUBLIC_URL + '/uploads/' + value.avatar + '")'}}></div>
+                                     style={{backgroundImage: 'url("' + value.avatar + '")'}}></div>
                             </Link>
                             <div className="FriendsActivityUserContent">{value.by}</div>
                         </div>

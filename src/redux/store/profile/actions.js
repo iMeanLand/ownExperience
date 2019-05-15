@@ -11,7 +11,7 @@ function setProfileUserData(profile) {
 function setProfileAvatar(avatar) {
     return {
         type: 'SET_PROFILE_AVATAR',
-        payload: avatar
+        payload: /uploads/ + avatar
     }
 }
 

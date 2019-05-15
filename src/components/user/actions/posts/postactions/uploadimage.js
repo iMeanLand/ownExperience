@@ -54,7 +54,7 @@ class uploadImage extends React.Component {
         let el = document.getElementsByClassName('SelectedPostType')[0];
         if (el.classList.contains('active')) {
             postType.active = false;
-            postType.type = '';
+            postType.type = 'text';
             postType.postType = null;
             this.props.changeFeedPostType(postType);
         } else {

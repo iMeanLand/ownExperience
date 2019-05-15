@@ -24,7 +24,7 @@ function Friends(props) {
                                     <div className="FriendBlock">
                                         <Link to={'/profile/' + key}>
                                             <div className="FriendsAvatar"
-                                                 style={{backgroundImage: 'url("' + process.env.PUBLIC_URL + '/uploads/' + value.avatar + '")'}}></div>
+                                                 style={{backgroundImage: 'url("' + value.avatar + '")'}}></div>
                                         </Link>
                                         <div className="FriendsUserContent">{value.by}</div>
                                     </div>

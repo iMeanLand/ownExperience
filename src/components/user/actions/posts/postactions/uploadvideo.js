@@ -4,7 +4,7 @@ import {changeFeedPostType} from '../../../../../redux/store/feed/actions';
 
 function mappingData(state) {
     return {
-      
+
     };
 }
 
@@ -13,6 +13,11 @@ const mapDispatchToComponent = {
 };
 
 class uploadVideo extends React.Component {
+
+    componentDidMount() {
+        // console.log(this.props.valueOfAction);
+        console.log({...this.props.valueOfAction});
+    }
 
     constructor(props) {
         super(props);
@@ -24,11 +29,13 @@ class uploadVideo extends React.Component {
         let postType = {
             postType: this.uploadVideoTemplate(),
             active: false,
+            type: 'text',
             actionValue: e.currentTarget.value
         };
 
         postType.active = true;
         postType.type = 'video';
+        postType.postType = this.uploadVideoTemplate();
         this.props.changeFeedPostType(postType);
     }
 

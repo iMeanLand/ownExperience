@@ -7,6 +7,8 @@ import UploadVideo from './postactions/uploadvideo';
 import UploadMusic from './postactions/uploadmusic';
 import UploadLink from './postactions/uploadlink';
 import UploadSmile from './postactions/uploadsmile';
+import AlertSuccess from '../../../modules/alerts/alertsuccess';
+import AlertFailed from '../../../modules/alerts/alertfailed';
 import $ from 'jquery';
 
 import {addFeedPost, changeFeedPostType} from '../../../../redux/store/feed/actions';
@@ -40,20 +42,19 @@ class AddPost extends React.Component {
 
     addPost() {
 
-        let postType = $('.SelectedPostType').data('selectedType');
-
         const username = this.props.user.username;
         const by = this.props.user.username;
         const content = $('.FeedAddPostInput').val();
-        const additionalContent = this.props.valueOfAction;
+        const additionalContent = this.props.postType.actionValue;
         const avatar = this.props.user.avatar;
+        const type = this.props.postType.type;
 
         let post_id = this.generateNewID();
 
         let post = {};
         post[post_id] = {
             'by': by,
-            'type': postType,
+            'type': type,
             'content': content,
             'username': username,
             'additional_content': additionalContent,
@@ -63,7 +64,15 @@ class AddPost extends React.Component {
             'last_name': 'Tabuci',
         };
 
-        this.props.addFeedPost(post);
+        console.log(post);
+
+        if (content || additionalContent) {
+            AlertSuccess.displayAlert('Post', 'Post has been posted successfully');
+            this.props.addFeedPost(post);
+        } else {
+            AlertFailed.displayAlert('Post', 'Failed to post, because textarea is empty');
+        }
+
     }
 
     render() {

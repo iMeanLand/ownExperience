@@ -1,6 +1,8 @@
 const initialState = {
-    postType: '',
+    type: 'text',
+    active: false,
     actionValue: '',
+    additional_content: '',
     feedPosts: {}
 };
 

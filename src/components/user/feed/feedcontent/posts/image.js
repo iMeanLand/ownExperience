@@ -8,7 +8,7 @@ function Image(props) {
     let by = props.by;
     let content = props.content;
     let additional_content = props.additional_content;
-    let avatar = process.env.PUBLIC_URL + '/uploads/' + props.avatar;
+    let avatar = props.avatar;
 
     return (
         <div className="FeedPost TextPost">

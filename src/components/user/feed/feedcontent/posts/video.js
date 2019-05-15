@@ -2,11 +2,12 @@ import React from 'react';
 import PostActions from '../../../actions/posts/postactions/postactions';
 import {Link} from "react-router-dom";
 
-function Text(props) {
+function Video(props) {
 
     let username = props.username;
     let by = props.by;
     let content = props.content;
+    let additional_content = props.additional_content;
     let avatar = props.avatar;
 
     return (
@@ -21,11 +22,16 @@ function Text(props) {
                 </Link>
             </div>
             <div className="FeedPostContent">
-                {content}
+                <p>
+                    {content}
+                </p>
+                <div className="FeedPostImage">
+                    <a href={additional_content} target="_blank" title={additional_content}>{additional_content}</a>
+                </div>
             </div>
             <PostActions/>
         </div>
     )
 }
 
-export default Text;
+export default Video;
