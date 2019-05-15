@@ -7,6 +7,7 @@ function Image(props) {
     let username = props.username;
     let by = props.by;
     let content = props.content;
+    let additional_content = props.additional_content;
     let avatar = process.env.PUBLIC_URL + '/uploads/' + props.avatar;
 
     return (
@@ -21,8 +22,11 @@ function Image(props) {
                 </Link>
             </div>
             <div className="FeedPostContent">
+                <p>
+                    {content}
+                </p>
                 <div className="FeedPostImage">
-                    <img src={content} alt=""/>
+                    <img src={additional_content} alt=""/>
                 </div>
             </div>
             <PostActions/>

@@ -40,6 +40,7 @@ class Timeline extends React.Component {
                 by: value.by,
                 avatar: value.avatar,
                 username: key,
+                additional_content: value.additional_content,
                 key: key
             });
         });

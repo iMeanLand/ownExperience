@@ -9,6 +9,8 @@ const feedData = {
         'token': '',
         'first_name': 'Mihai',
         'last_name': 'Cuculescu',
+        'additional_content': '',
+        
     },
 
     2: {
@@ -22,6 +24,8 @@ const feedData = {
         'token': 'y08fh3jyvlm09cpa9958uv',
         'first_name': 'jora',
         'last_name': 'pupkin',
+        'additional_content': '',
+        
     },
 
     3: {
@@ -32,6 +36,8 @@ const feedData = {
         'token': '',
         'first_name': 'John',
         'last_name': 'Snow',
+        'additional_content': '',
+        
     },
 
     4: {
@@ -43,6 +49,8 @@ const feedData = {
         'token': '',
         'first_name': 'Andrew',
         'last_name': 'Deux',
+        'additional_content': '',
+        
     },
 
     5: {
@@ -54,6 +62,8 @@ const feedData = {
         'token': '',
         'first_name': 'Alexander',
         'last_name': 'Japonskiy',
+        'additional_content': '',
+        
     },
 
     6: {
@@ -64,6 +74,8 @@ const feedData = {
         'token': '',
         'first_name': 'Max',
         'last_name': 'Braston',
+        'additional_content': '',
+        
     },
 
     7: {
@@ -74,6 +86,8 @@ const feedData = {
         'token': '',
         'first_name': 'William',
         'last_name': 'Jr.Dowsen',
+        'additional_content': '',
+        
     },
 
     8: {
@@ -84,6 +98,8 @@ const feedData = {
         'token': '',
         'first_name': 'Mark',
         'last_name': 'Zacksman',
+        'additional_content': '',
+        
     },
 
 };

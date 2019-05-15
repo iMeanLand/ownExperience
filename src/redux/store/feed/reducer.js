@@ -1,5 +1,6 @@
 const initialState = {
     postType: '',
+    actionValue: '',
     feedPosts: {}
 };
 
@@ -18,8 +19,11 @@ const feedReducer = (state = initialState, action) => {
         case 'CHANGE_POST_TYPE':
             return {
                 ...state,
-                postType: action.payload
-            }
+                postType: action.payload.postType,
+                active: action.payload.active,
+                type: action.payload.type,
+                actionValue: action.payload.actionValue
+            };
         default:
             return state;
     }

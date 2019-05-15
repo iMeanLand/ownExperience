@@ -184,13 +184,18 @@
     width: 100%;
     transition: all 0.3s ease;
     height: 0;
+    overflow: hidden;
 }
 
 .SelectedPostType.active {
     border-bottom: 1px solid #efefef;
     border-top: 1px solid #efefef;
-    height: 46px;
+    height: 56px;
     padding: 10px;
+}
+
+.SelectedPostType.image.active {
+    height: 190px;
 }
 
 .AddPostAction.active {
