@@ -58,16 +58,18 @@ class AddPost extends React.Component {
         let post_id = this.generateNewID();
 
         let post = {
-            'by_id': by_id,
-            'by_username': by_username,
-            'type': type,
-            'content': content,
-            'username': username,
-            'additional_content': additionalContent,
-            'avatar': avatar,
-            'token': '',
-            'first_name': 'Alin',
-            'last_name': 'Tabuci',
+            post_id: {
+                'by_id': by_id,
+                'by_username': by_username,
+                'type': type,
+                'content': content,
+                'username': username,
+                'additional_content': additionalContent,
+                'avatar': avatar,
+                'token': '',
+                'first_name': 'Alin',
+                'last_name': 'Tabuci',
+            }
         };
 
         if (content || additionalContent) {
