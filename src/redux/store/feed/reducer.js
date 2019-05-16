@@ -24,6 +24,7 @@ const feedReducer = (state = initialState, action) => {
                 postType: action.payload.postType,
                 active: action.payload.active,
                 type: action.payload.type,
+                content: action.payload.content,
                 actionValue: action.payload.actionValue
             };
         default:

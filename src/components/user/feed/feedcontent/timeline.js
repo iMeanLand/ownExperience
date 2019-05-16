@@ -41,13 +41,14 @@ class Timeline extends React.Component {
             let MyComponent = MyComponents[value.type];
             return React.createElement(MyComponent, {
                 content: value.content,
-                by: value.by,
+                by: value.by_username,
                 avatar: value.avatar,
-                username: key,
+                username: value.by_username,
                 additional_content: value.additional_content,
                 key: key
             });
         });
+        //
 
         return (
             <div className="Timeline" style={this.styles}>

@@ -30,20 +30,26 @@ const mapDispatchToComponent = {
 
 class AddPost extends React.Component {
 
+    componentDidMount() {
+
+    }
+
     constructor(props) {
         super(props);
 
         this.addPost = this.addPost.bind(this);
+        this.handleTextareaChange = this.handleTextareaChange.bind(this);
     }
 
     generateNewID() {
-        return Math.random();
+        return Math.random() * 20 + 1;
     }
 
     addPost() {
 
         const username = this.props.user.username;
-        const by = this.props.user.username;
+        const by_id = this.props.user.id;
+        const by_username = this.props.user.username;
         const content = $('.FeedAddPostInput').val();
         const additionalContent = this.props.postType.actionValue;
         const avatar = this.props.user.avatar;
@@ -51,9 +57,9 @@ class AddPost extends React.Component {
 
         let post_id = this.generateNewID();
 
-        let post = {};
-        post[post_id] = {
-            'by': by,
+        let post = {
+            'by_id': by_id,
+            'by_username': by_username,
             'type': type,
             'content': content,
             'username': username,
@@ -64,15 +70,25 @@ class AddPost extends React.Component {
             'last_name': 'Tabuci',
         };
 
-        console.log(post);
-
         if (content || additionalContent) {
             AlertSuccess.displayAlert('Post', 'Post has been posted successfully');
             this.props.addFeedPost(post);
+            $('.FeedAddPostInput').val('');
         } else {
             AlertFailed.displayAlert('Post', 'Failed to post, because textarea is empty');
+            $('.FeedAddPostInput').val('');
         }
 
+    }
+
+    handleTextareaChange(e) {
+        let postType = {
+            content: e.currentTarget.value,
+            additional_content: '',
+            type: 'text'
+        };
+
+        this.props.changeFeedPostType(postType);
     }
 
     render() {
@@ -110,7 +126,8 @@ class AddPost extends React.Component {
                     </div>
                 </div>
                 <div className="FeedAddPostContent">
-                    <textarea className="FeedAddPostInput" placeholder="Post something in your time line">
+                    <textarea defaultValue={this.props.postType.content} className="FeedAddPostInput"
+                              placeholder="Post something in your time line" onChange={this.handleTextareaChange}>
                     </textarea>
                     <div data-selected-type="text" id="SelectedPostType" className={"SelectedPostType " + active}>
                         {this.props.postType.postType}
@@ -118,7 +135,8 @@ class AddPost extends React.Component {
                 </div>
                 <div className="FeedPostActions UserAction">
                     <div className="LeftAligned">
-                        <UploadImage uploadImage={this.props.postType.actionValue} valueOfAction={this.props.postType.actionValue}/>
+                        <UploadImage uploadImage={this.props.postType.actionValue}
+                                     valueOfAction={this.props.postType.actionValue}/>
                         <UploadVideo valueOfAction={this.props.postType.actionValue}/>
                         <UploadMusic valueOfAction={this.props.postType.actionValue}/>
                         <UploadLink valueOfAction={this.props.postType.actionValue}/>

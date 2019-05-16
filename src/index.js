@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {routes} from './router';
 // import * as serviceWorker from './serviceWorker';
-import {createStore} from "redux";
+import {createStore, applyMiddleware} from "redux";
 import {globalReducer} from './redux/store/globalreducer';
 import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
 
-const store = createStore(globalReducer);
+const store = createStore(globalReducer, applyMiddleware(thunk));
+global.apiURL = 'https://efes--dev.wippo-it.net';
 
 ReactDOM.render(
     <Provider store={store}>

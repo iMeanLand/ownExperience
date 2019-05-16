@@ -1,6 +1,6 @@
 const feedData = {
 
-    0: {
+    12: {
         'by': 'Mihai',
         'type': 'text',
         'content': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
@@ -13,7 +13,7 @@ const feedData = {
         
     },
 
-    2: {
+    314: {
         'by': 'Alin Tabuci',
         'type': 'text',
         'content': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
@@ -28,7 +28,7 @@ const feedData = {
         
     },
 
-    3: {
+    111: {
         'by': 'John Snow',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',
@@ -40,7 +40,7 @@ const feedData = {
         
     },
 
-    4: {
+    24: {
         'by': 'Andrew Deux',
         'type': 'text',
         'content': 'It is a long established fact that a reader will' +
@@ -53,7 +53,7 @@ const feedData = {
         
     },
 
-    5: {
+    66: {
         'by': 'Alexander Japonskiy',
         'type': 'text',
         'content': 'There are many variations of passages of Lorem Ipsum available, ' +
@@ -66,7 +66,7 @@ const feedData = {
         
     },
 
-    6: {
+    31: {
         'by': 'Max Braston',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',
@@ -78,7 +78,7 @@ const feedData = {
         
     },
 
-    7: {
+    27: {
         'by': 'William Jr.Dowsen',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',
@@ -90,7 +90,7 @@ const feedData = {
         
     },
 
-    8: {
+    33: {
         'by': 'Mark Zacksman',
         'type': 'text',
         'content': 'Hello guys, this is my first post on this website!',

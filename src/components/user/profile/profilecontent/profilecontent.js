@@ -11,7 +11,7 @@ class ProfileContent extends React.Component {
         };
 
         return (
-            <div style={{display: 'flex'}}>
+            <div style={{display: 'flex', width: '100%'}}>
                 <Timeline styles={styles}/>
                 <Sidebar/>
             </div>

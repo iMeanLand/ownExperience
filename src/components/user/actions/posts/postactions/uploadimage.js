@@ -26,6 +26,7 @@ class uploadImage extends React.Component {
         this.setState({
             pictures: this.state.pictures.concat(picture),
         });
+        let picutres = this.state.pictures;
         // Uploading IMAGE
 
     }
@@ -69,6 +70,7 @@ class uploadImage extends React.Component {
     render() {
         return (
             <span data-type="image" className="FeedUploadImage AddPostAction" onClick={this.handleImageIconClick}>
+                <span className="buttonTip">Photo</span>
                 <i className="fas fa-camera"></i>
             </span>
         );

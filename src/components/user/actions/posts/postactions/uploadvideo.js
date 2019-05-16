@@ -72,6 +72,7 @@ class uploadVideo extends React.Component {
     render() {
         return (
             <span data-type="video" className="FeedUploadVideo AddPostAction" onClick={this.uploadVideo}>
+                 <span className="buttonTip">Video</span>
                 <i className="fas fa-video"></i>
             </span>
         );
